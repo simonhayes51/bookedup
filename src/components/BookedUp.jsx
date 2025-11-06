@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+﻿import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   Search, Star, MapPin, Calendar, Music, MessageCircle, Sparkles, TrendingUp,
   CheckCircle, Award, Send, X, Menu, BarChart3, Users, DollarSign, Activity,
@@ -12,7 +12,7 @@ const clampNum = (v, def = 0) => {
   return Number.isFinite(n) ? n : def;
 };
 const parseRange = (price) => {
-  // "£300-500" -> {min:300, max:500}
+  // "Â£300-500" -> {min:300, max:500}
   const [a, b] = String(price).split("-").map(clampNum);
   return { min: a || 0, max: b || a || 0 };
 };
@@ -89,7 +89,7 @@ const BookedUp = () => {
       location: "Manchester",
       rating: 4.9,
       reviews: 127,
-      price: "£300-500",
+      price: "Â£300-500",
       image: "https://images.unsplash.com/photo-1571266028243-d220c6c65921?w=800&h=600&fit=crop",
       verified: true,
       premium: true,
@@ -108,7 +108,7 @@ const BookedUp = () => {
       location: "London",
       rating: 5.0,
       reviews: 89,
-      price: "£400-700",
+      price: "Â£400-700",
       image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800&h=600&fit=crop",
       verified: true,
       premium: true,
@@ -127,7 +127,7 @@ const BookedUp = () => {
       location: "Birmingham",
       rating: 4.7,
       reviews: 64,
-      price: "£250-400",
+      price: "Â£250-400",
       image: "https://images.unsplash.com/photo-1527224857830-43a7acc85260?w=800&h=600&fit=crop",
       verified: true,
       premium: false,
@@ -146,7 +146,7 @@ const BookedUp = () => {
       location: "Leeds",
       rating: 4.8,
       reviews: 112,
-      price: "£500-800",
+      price: "Â£500-800",
       image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?w=800&h=600&fit=crop",
       verified: true,
       premium: true,
@@ -165,7 +165,7 @@ const BookedUp = () => {
       location: "Bristol",
       rating: 4.6,
       reviews: 73,
-      price: "£200-400",
+      price: "Â£200-400",
       image: "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=800&h=600&fit=crop",
       verified: false,
       premium: false,
@@ -184,7 +184,7 @@ const BookedUp = () => {
       location: "Edinburgh",
       rating: 4.9,
       reviews: 95,
-      price: "£600-1000",
+      price: "Â£600-1000",
       image: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop",
       verified: true,
       premium: true,
@@ -336,7 +336,7 @@ const BookedUp = () => {
             </span>
           </h2>
           <p className="text-2xl text-white mb-8 font-bold" style={{ textShadow: '2px 2px 0px rgba(0,0,0,0.3)' }}>
-            DJs • Bands • Singers • Comedians • All in One Place
+            DJs â€¢ Bands â€¢ Singers â€¢ Comedians â€¢ All in One Place
           </p>
           
           <div className="bg-white rounded-full p-2 shadow-2xl max-w-3xl mx-auto flex items-center gap-2 border-4 border-yellow-400">
@@ -370,7 +370,7 @@ const BookedUp = () => {
                     : 'bg-white bg-opacity-20 text-white border-white'
                 }`}
               >
-                {genre === 'all' ? '✨ ALL' : genre.toUpperCase()}
+                {genre === 'all' ? 'âœ¨ ALL' : genre.toUpperCase()}
               </button>
             ))}
           </div>
@@ -379,7 +379,7 @@ const BookedUp = () => {
             <div className="mt-6 max-w-4xl mx-auto bg-white/95 rounded-2xl p-5 border-4 border-yellow-400 text-left">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
-                  <label className="text-xs font-bold text-gray-600">Min Price (£)</label>
+                  <label className="text-xs font-bold text-gray-600">Min Price (Â£)</label>
                   <input
                     type="number"
                     value={filters.minPrice}
@@ -389,7 +389,7 @@ const BookedUp = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-gray-600">Max Price (£)</label>
+                  <label className="text-xs font-bold text-gray-600">Max Price (Â£)</label>
                   <input
                     type="number"
                     value={filters.maxPrice}
@@ -454,7 +454,7 @@ const BookedUp = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div><div className="text-4xl font-black text-yellow-400 mb-2">2,500+</div><div className="text-white font-bold">Acts Listed</div></div>
             <div><div className="text-4xl font-black text-pink-400 mb-2">15,000+</div><div className="text-white font-bold">Bookings Made</div></div>
-            <div><div className="text-4xl font-black text-purple-400 mb-2">4.8★</div><div className="text-white font-bold">Average Rating</div></div>
+            <div><div className="text-4xl font-black text-purple-400 mb-2">4.8â˜…</div><div className="text-white font-bold">Average Rating</div></div>
             <div><div className="text-4xl font-black text-orange-400 mb-2">98%</div><div className="text-white font-bold">Success Rate</div></div>
           </div>
         </div>
@@ -463,7 +463,7 @@ const BookedUp = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="flex items-center justify-between mb-8">
           <h3 className="text-4xl font-black text-white" style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.3)' }}>
-            🔥 FEATURED ACTS
+            ðŸ”¥ FEATURED ACTS
           </h3>
           <button className="text-yellow-300 font-bold hover:text-yellow-400 transition flex items-center gap-2">
             View All <TrendingUp size={20} />
@@ -654,7 +654,7 @@ const BookedUp = () => {
                 value={signupData.price}
                 onChange={(e) => setSignupData({...signupData, price: e.target.value})}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none"
-                placeholder="£300-500"
+                placeholder="Â£300-500"
               />
             </div>
 
@@ -696,7 +696,7 @@ const BookedUp = () => {
                   <li className="flex items-center gap-2"><Check className="text-green-600" size={18} /> Lower booking fees</li>
                 </ul>
                 <div className="mt-4">
-                  <div className="text-3xl font-black">£29.99<span className="text-base font-bold">/month</span></div>
+                  <div className="text-3xl font-black">Â£29.99<span className="text-base font-bold">/month</span></div>
                 </div>
                 <button type="button" className="mt-4 w-full bg-gradient-to-r from-yellow-400 to-pink-500 text-black px-6 py-3 rounded-full font-black hover:scale-105 transition">
                   Upgrade to Premium
@@ -802,12 +802,22 @@ const BookedUp = () => {
                       type="text"
                       value={currentMessage}
                       onChange={(e) => setCurrentMessage(e.target.value)}
-                      onKeyDown={(e) => e.key === 'Enter' && currentMessage.trim() && setMessages([...messages, { text: currentMessage, sender: 'me', time: 'Just now' }])}
+                      onKeyDown={(e) => {
+  if (e.key === 'Enter' && currentMessage.trim()) {
+    setMessages([...messages, { text: currentMessage, sender: 'me', time: 'Just now' }]);
+    setCurrentMessage('');
+  }
+}}
                       placeholder="Type your message..."
                       className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-full focus:border-pink-500 focus:outline-none"
                     />
                     <button 
-                      onClick={() => currentMessage.trim() && setMessages([...messages, { text: currentMessage, sender: 'me', time: 'Just now' }]) or setCurrentMessage('')}
+                      onClick={() => {
+  if (currentMessage.trim()) {
+    setMessages([...messages, { text: currentMessage, sender: 'me', time: 'Just now' }]);
+    setCurrentMessage('');
+  }
+}}
                       className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-3 rounded-full hover:scale-105 transition transform"
                     >
                       <Send size={24} />
@@ -867,7 +877,7 @@ const BookedUp = () => {
             <DollarSign size={32} className="text-white" />
             <TrendingUp size={24} className="text-white opacity-70" />
           </div>
-          <div className="text-4xl font-black text-white mb-2">£2.4M</div>
+          <div className="text-4xl font-black text-white mb-2">Â£2.4M</div>
           <div className="text-white font-bold">Total Revenue</div>
           <div className="text-sm text-white opacity-80 mt-2">+15% this month</div>
         </div>
@@ -1141,7 +1151,7 @@ const BookedUp = () => {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
-            <p>© 2025 BookedUp. Making entertainment booking fun since 2025. 🎉</p>
+            <p>Â© 2025 BookedUp. Making entertainment booking fun since 2025. ðŸŽ‰</p>
           </div>
         </div>
       </footer>
@@ -1150,3 +1160,4 @@ const BookedUp = () => {
 };
 
 export default BookedUp;
+
