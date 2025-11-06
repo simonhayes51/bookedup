@@ -1,4 +1,4 @@
-﻿# --- push-and-deploy.ps1 (handles no package-lock, installs, builds, pushes, deploys) ---
+﻿# --- push-and-deploy.ps1 (robust install with retry + verbose) ---
 param(
   [bool]$Patch = $true,
   [string]$Repo = "https://github.com/simonhayes51/bookedup.git",
@@ -17,7 +17,13 @@ Require-Cmd git
 Require-Cmd npm
 Require-Cmd npx
 
-# 1) Optional patch (literal replace; no regex)
+# Helpful npm settings
+npm config set registry "https://registry.npmjs.org/"
+npm config set audit false
+npm config set fund false
+$env:NODE_OPTIONS = "--max-old-space-size=4096"
+
+# ---------- Optional quick patch for known handlers (safe literal replace) ----------
 $jsxPath = "src/components/BookedUp.jsx"
 if ($Patch -and (Test-Path $jsxPath)) {
   $text = Get-Content -Path $jsxPath -Raw
@@ -53,47 +59,54 @@ onKeyDown={(e) => {
   } else {
     Write-Host "ℹ️ No patch needed (patterns not found) — continuing." -ForegroundColor Yellow
   }
-} elseif ($Patch) {
-  Write-Host "ℹ️ Skipped patch (file not found): $jsxPath" -ForegroundColor Yellow
 }
 
-# 2) Install deps (use npm install if no lockfile; else npm ci)
-if (Test-Path "package-lock.json") {
-  Write-Host "📦 Installing dependencies with npm ci..." -ForegroundColor Cyan
-  npm ci
-} else {
-  Write-Host "📦 No package-lock.json found — running npm install to generate it..." -ForegroundColor Cyan
-  npm install
+# ---------- INSTALL with verbose + retry ----------
+function Install-Deps {
+  if (Test-Path "package-lock.json") {
+    Write-Host "📦 Installing deps with npm ci (lockfile present)..." -ForegroundColor Cyan
+    npm ci --loglevel=verbose
+  } else {
+    Write-Host "📦 Installing deps (first run, no lockfile)..." -ForegroundColor Cyan
+    npm install --loglevel=verbose
+  }
+  return $LASTEXITCODE
 }
-if ($LASTEXITCODE -ne 0) { Write-Host "❌ npm install failed." -ForegroundColor Red; exit 1 }
 
-# 3) Build
+$code = Install-Deps
+if ($code -ne 0) {
+  Write-Host "⚠️ First install failed. Retrying with safe flags..." -ForegroundColor Yellow
+  if (Test-Path "node_modules") { Remove-Item -Recurse -Force "node_modules" }
+  if (Test-Path "package-lock.json") { Remove-Item -Force "package-lock.json" }
+  npm cache clean --force | Out-Null
+  npm install --legacy-peer-deps --no-optional --no-audit --no-fund --loglevel=verbose --registry=https://registry.npmjs.org/
+  if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ npm install failed again. Try: npm ping / npm install --verbose / check proxy/VPN." -ForegroundColor Red
+    exit 1
+  }
+}
+
+# ---------- BUILD ----------
 Write-Host "🛠️  Building production bundle..." -ForegroundColor Cyan
 npm run build
 if ($LASTEXITCODE -ne 0) { Write-Host "❌ Build failed. Aborting." -ForegroundColor Red; exit 1 }
 
-# 4) Git init / commit / push
-if (-not (Test-Path ".git")) {
-  git init
-  Write-Host "✅ Initialised git repository."
-}
+# ---------- GIT PUSH ----------
+if (-not (Test-Path ".git")) { git init; Write-Host "✅ Initialised git repository." }
 git branch -M main | Out-Null
-
 $hasOrigin = git remote | Select-String -SimpleMatch "origin"
 if ($hasOrigin) { git remote remove origin | Out-Null }
 git remote add origin $Repo
 Write-Host "🔗 Remote set to $Repo"
-
 git add -A
 git commit -m $Message
 Write-Host "📝 Committed: $Message"
-
 Write-Host "⬆️  Pushing to GitHub..." -ForegroundColor Cyan
 git push -u origin main -f
 if ($LASTEXITCODE -ne 0) { Write-Host "❌ Push failed." -ForegroundColor Red; exit 1 }
 Write-Host "✅ Pushed to GitHub." -ForegroundColor Green
 
-# 5) Deploy to Railway (already linked project)
+# ---------- RAILWAY DEPLOY ----------
 Write-Host "🚄 Deploying to Railway (linked project)..." -ForegroundColor Cyan
 npx --yes @railway/cli@latest up --detach
 if ($LASTEXITCODE -ne 0) {
