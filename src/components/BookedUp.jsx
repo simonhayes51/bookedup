@@ -264,7 +264,70 @@ const BookedUp = () => {
     el.addEventListener("dragover", prevent);
     el.addEventListener("dragenter", prevent);
     el.addEventListener("drop", handleDrop);
-    return () => {
+    const renderFavourites = () => {
+  const favs = performers.filter(p => favoriteActs.includes(p.id));
+  return (
+    <section className="container mx-auto px-4 py-16">
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-4xl font-black text-white" style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.3)' }}>
+          ❤️ Your Favourites
+        </h3>
+        {favs.length > 0 && (
+          <button
+            onClick={() => setFavoriteActs([])}
+            className="text-sm px-4 py-2 rounded-full border-2 border-gray-300 font-bold hover:bg-gray-100"
+          >
+            Clear all
+          </button>
+        )}
+      </div>
+
+      {favs.length === 0 ? (
+        <div className="bg-white/90 rounded-2xl p-10 text-center border-4 border-pink-400">
+          <p className="text-xl font-bold text-gray-800 mb-4">No saved acts yet.</p>
+          <button
+            onClick={() => setCurrentView('home')}
+            className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-black hover:scale-105 transition"
+          >
+            Browse acts and tap “Save”
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {favs.map(performer => (
+            <div
+              key={performer.id}
+              onClick={() => { setSelectedPerformer(performer); setShowBookingModal(true); }}
+              className="bg-white rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition border-4 border-transparent hover:border-yellow-400 cursor-pointer"
+            >
+              <div className="relative">
+                <img src={performer.image} alt={performer.name} className="w-full h-64 object-cover" />
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleFav(e, performer.id); }}
+                  className="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full font-bold shadow hover:scale-105 transition"
+                >
+                  Remove
+                </button>
+              </div>
+              <div className="p-6">
+                <h4 className="text-2xl font-black text-gray-900 mb-1">{performer.name}</h4>
+                <div className="text-gray-600 font-semibold">{performer.genre} • {performer.location}</div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="text-pink-600 font-black">{performer.price}</div>
+                  <div className="flex items-center gap-1 bg-yellow-400 px-2 py-1 rounded-full">
+                    <span className="font-black">{performer.rating}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+};
+
+return () => {
       el.removeEventListener("dragover", prevent);
       el.removeEventListener("dragenter", prevent);
       el.removeEventListener("drop", handleDrop);
@@ -973,7 +1036,70 @@ const BookedUp = () => {
     if (!showBookingModal || !selectedPerformer) return null;
 
     const p = selectedPerformer;
-    return (
+    const renderFavourites = () => {
+  const favs = performers.filter(p => favoriteActs.includes(p.id));
+  return (
+    <section className="container mx-auto px-4 py-16">
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-4xl font-black text-white" style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.3)' }}>
+          ❤️ Your Favourites
+        </h3>
+        {favs.length > 0 && (
+          <button
+            onClick={() => setFavoriteActs([])}
+            className="text-sm px-4 py-2 rounded-full border-2 border-gray-300 font-bold hover:bg-gray-100"
+          >
+            Clear all
+          </button>
+        )}
+      </div>
+
+      {favs.length === 0 ? (
+        <div className="bg-white/90 rounded-2xl p-10 text-center border-4 border-pink-400">
+          <p className="text-xl font-bold text-gray-800 mb-4">No saved acts yet.</p>
+          <button
+            onClick={() => setCurrentView('home')}
+            className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-black hover:scale-105 transition"
+          >
+            Browse acts and tap “Save”
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {favs.map(performer => (
+            <div
+              key={performer.id}
+              onClick={() => { setSelectedPerformer(performer); setShowBookingModal(true); }}
+              className="bg-white rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition border-4 border-transparent hover:border-yellow-400 cursor-pointer"
+            >
+              <div className="relative">
+                <img src={performer.image} alt={performer.name} className="w-full h-64 object-cover" />
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleFav(e, performer.id); }}
+                  className="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full font-bold shadow hover:scale-105 transition"
+                >
+                  Remove
+                </button>
+              </div>
+              <div className="p-6">
+                <h4 className="text-2xl font-black text-gray-900 mb-1">{performer.name}</h4>
+                <div className="text-gray-600 font-semibold">{performer.genre} • {performer.location}</div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="text-pink-600 font-black">{performer.price}</div>
+                  <div className="flex items-center gap-1 bg-yellow-400 px-2 py-1 rounded-full">
+                    <span className="font-black">{performer.rating}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+};
+
+return (
       <div className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-4 border-yellow-400">
           <div className="relative">
@@ -1109,13 +1235,77 @@ const BookedUp = () => {
     );
   };
 
+  const renderFavourites = () => {
+  const favs = performers.filter(p => favoriteActs.includes(p.id));
   return (
+    <section className="container mx-auto px-4 py-16">
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-4xl font-black text-white" style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.3)' }}>
+          ❤️ Your Favourites
+        </h3>
+        {favs.length > 0 && (
+          <button
+            onClick={() => setFavoriteActs([])}
+            className="text-sm px-4 py-2 rounded-full border-2 border-gray-300 font-bold hover:bg-gray-100"
+          >
+            Clear all
+          </button>
+        )}
+      </div>
+
+      {favs.length === 0 ? (
+        <div className="bg-white/90 rounded-2xl p-10 text-center border-4 border-pink-400">
+          <p className="text-xl font-bold text-gray-800 mb-4">No saved acts yet.</p>
+          <button
+            onClick={() => setCurrentView('home')}
+            className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-black hover:scale-105 transition"
+          >
+            Browse acts and tap “Save”
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {favs.map(performer => (
+            <div
+              key={performer.id}
+              onClick={() => { setSelectedPerformer(performer); setShowBookingModal(true); }}
+              className="bg-white rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition border-4 border-transparent hover:border-yellow-400 cursor-pointer"
+            >
+              <div className="relative">
+                <img src={performer.image} alt={performer.name} className="w-full h-64 object-cover" />
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleFav(e, performer.id); }}
+                  className="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full font-bold shadow hover:scale-105 transition"
+                >
+                  Remove
+                </button>
+              </div>
+              <div className="p-6">
+                <h4 className="text-2xl font-black text-gray-900 mb-1">{performer.name}</h4>
+                <div className="text-gray-600 font-semibold">{performer.genre} • {performer.location}</div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="text-pink-600 font-black">{performer.price}</div>
+                  <div className="flex items-center gap-1 bg-yellow-400 px-2 py-1 rounded-full">
+                    <span className="font-black">{performer.rating}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+};
+
+return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-800 to-orange-700">
       {renderHeader()}
       {currentView === 'home' && renderHome()}
       {currentView === 'signup' && renderSignup()}
       {currentView === 'messages' && renderMessages()}
       {currentView === 'admin' && renderAdmin()}
+{currentView === 'favourites' && renderFavourites()}
       {renderBookingModal()}
 
       <footer className="bg-black bg-opacity-80 text-white py-12 border-t-4 border-pink-500">
@@ -1128,7 +1318,7 @@ const BookedUp = () => {
             <div>
               <h5 className="font-bold mb-3">For Venues</h5>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-yellow-400">Browse Acts</a></li>
+                <li><button onClick={() => setCurrentView('home')} className="hover:text-yellow-400">Browse Acts</button></li>
                 <li><a href="#" className="hover:text-yellow-400">How It Works</a></li>
                 <li><a href="#" className="hover:text-yellow-400">Pricing</a></li>
               </ul>
@@ -1136,7 +1326,7 @@ const BookedUp = () => {
             <div>
               <h5 className="font-bold mb-3">For Performers</h5>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-yellow-400">Sign Up</a></li>
+                <li><button onClick={() => setCurrentView('signup')} className="hover:text-yellow-400">Sign Up</button></li>
                 <li><a href="#" className="hover:text-yellow-400">Premium Plans</a></li>
                 <li><a href="#" className="hover:text-yellow-400">Success Stories</a></li>
               </ul>
@@ -1160,4 +1350,5 @@ const BookedUp = () => {
 };
 
 export default BookedUp;
+
 
