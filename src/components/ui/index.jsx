@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 
 /**
- * Reusable Button Component
+ * 90s Retro Button Component - MTV Vibes!
  */
 export const Button = ({
   children,
@@ -13,22 +13,22 @@ export const Button = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-none retro-shadow transition-all focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed border-4 border-black';
 
   const variants = {
-    primary: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
-    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
-    outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-red-500',
-    ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
-    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
+    primary: 'bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white hover:from-pink-600 hover:via-purple-600 hover:to-cyan-600',
+    secondary: 'bg-yellow-400 text-black hover:bg-yellow-500',
+    outline: 'border-4 border-black bg-white text-black hover:bg-gray-100',
+    neon: 'bg-black text-cyan-400 border-cyan-400 neon-border hover:text-pink-500',
+    danger: 'bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-red-600 hover:to-pink-600',
+    success: 'bg-gradient-to-r from-lime-400 to-green-500 text-black hover:from-lime-500 hover:to-green-600',
   };
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-    xl: 'px-8 py-4 text-lg',
+    sm: 'px-4 py-2 text-xs',
+    md: 'px-6 py-3 text-sm',
+    lg: 'px-8 py-4 text-base',
+    xl: 'px-12 py-5 text-lg',
   };
 
   return (
@@ -44,7 +44,7 @@ export const Button = ({
 };
 
 /**
- * Input Component
+ * 90s Input Component
  */
 export const Input = ({
   label,
@@ -56,34 +56,34 @@ export const Input = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-bold uppercase tracking-wide text-white mb-2">
           {label}
         </label>
       )}
       <input
-        className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent ${
+        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-white text-black font-bold focus:outline-none focus:border-cyan-400 ${
           error ? 'border-red-500' : ''
         } ${className}`}
         {...props}
       />
       {error && (
-        <p className="mt-1 text-sm text-red-600">{error}</p>
+        <p className="mt-2 text-sm text-yellow-400 font-bold">{error}</p>
       )}
       {helper && !error && (
-        <p className="mt-1 text-sm text-gray-500">{helper}</p>
+        <p className="mt-2 text-sm text-gray-300">{helper}</p>
       )}
     </div>
   );
 };
 
 /**
- * Card Component
+ * 90s Retro Card Component
  */
 export const Card = ({ children, className = '', hover = false, ...props }) => {
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm border border-gray-200 ${
-        hover ? 'hover:shadow-md transition-shadow cursor-pointer' : ''
+      className={`retro-card ${
+        hover ? 'hover:scale-105 cursor-pointer transition-transform' : ''
       } ${className}`}
       {...props}
     >
@@ -93,27 +93,28 @@ export const Card = ({ children, className = '', hover = false, ...props }) => {
 };
 
 /**
- * Badge Component
+ * 90s Badge Component - Bold and Bright!
  */
 export const Badge = ({ children, variant = 'default', className = '' }) => {
   const variants = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-red-100 text-red-800',
-    success: 'bg-green-100 text-green-800',
-    warning: 'bg-yellow-100 text-yellow-800',
-    danger: 'bg-red-100 text-red-800',
-    info: 'bg-blue-100 text-blue-800',
+    default: 'bg-gray-800 text-white border-gray-600',
+    primary: 'bg-pink-500 text-white border-pink-700',
+    success: 'bg-lime-400 text-black border-lime-600',
+    warning: 'bg-yellow-400 text-black border-yellow-600',
+    danger: 'bg-red-500 text-white border-red-700',
+    info: 'bg-cyan-400 text-black border-cyan-600',
+    neon: 'bg-black text-cyan-400 neon-border',
   };
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${variants[variant]} ${className}`}>
+    <span className={`inline-flex items-center px-3 py-1 rounded-none text-xs font-bold uppercase tracking-wide border-2 ${variants[variant]} ${className}`}>
       {children}
     </span>
   );
 };
 
 /**
- * Avatar Component
+ * Avatar Component with 90s border
  */
 export const Avatar = ({ src, alt, size = 'md', className = '' }) => {
   const sizes = {
@@ -125,11 +126,11 @@ export const Avatar = ({ src, alt, size = 'md', className = '' }) => {
   };
 
   return (
-    <div className={`${sizes[size]} rounded-full overflow-hidden bg-gray-200 ${className}`}>
+    <div className={`${sizes[size]} rounded-full overflow-hidden border-4 border-black ${className}`}>
       {src ? (
         <img src={src} alt={alt} className="w-full h-full object-cover" />
       ) : (
-        <div className="w-full h-full flex items-center justify-center text-gray-500 font-medium">
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-500 text-white font-bold">
           {alt?.charAt(0)?.toUpperCase() || '?'}
         </div>
       )}
@@ -138,7 +139,7 @@ export const Avatar = ({ src, alt, size = 'md', className = '' }) => {
 };
 
 /**
- * Modal Component
+ * 90s Modal Component
  */
 export const Modal = ({ isOpen, onClose, title, children, footer }) => {
   if (!isOpen) return null;
@@ -146,26 +147,26 @@ export const Modal = ({ isOpen, onClose, title, children, footer }) => {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-        {/* Backdrop */}
+        {/* Backdrop with 90s pattern */}
         <div
-          className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
+          className="fixed inset-0 transition-opacity bg-black bg-opacity-90 bg-dots"
           onClick={onClose}
         />
 
         {/* Modal */}
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div className="inline-block align-bottom retro-card text-left overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
           {title && (
-            <div className="px-6 py-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            <div className="px-6 py-4 bg-gradient-to-r from-pink-500 to-purple-500">
+              <h3 className="text-xl font-bold uppercase text-white">{title}</h3>
             </div>
           )}
 
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 bg-white">
             {children}
           </div>
 
           {footer && (
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+            <div className="px-6 py-4 bg-yellow-400 border-t-4 border-black">
               {footer}
             </div>
           )}
@@ -176,18 +177,18 @@ export const Modal = ({ isOpen, onClose, title, children, footer }) => {
 };
 
 /**
- * Select Component
+ * 90s Select Component
  */
 export const Select = ({ label, error, options, className = '', ...props }) => {
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-bold uppercase tracking-wide text-white mb-2">
           {label}
         </label>
       )}
       <select
-        className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent ${
+        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-white text-black font-bold focus:outline-none focus:border-cyan-400 ${
           error ? 'border-red-500' : ''
         } ${className}`}
         {...props}
@@ -199,48 +200,48 @@ export const Select = ({ label, error, options, className = '', ...props }) => {
         ))}
       </select>
       {error && (
-        <p className="mt-1 text-sm text-red-600">{error}</p>
+        <p className="mt-2 text-sm text-yellow-400 font-bold">{error}</p>
       )}
     </div>
   );
 };
 
 /**
- * Textarea Component
+ * 90s Textarea Component
  */
 export const Textarea = ({ label, error, className = '', ...props }) => {
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-bold uppercase tracking-wide text-white mb-2">
           {label}
         </label>
       )}
       <textarea
-        className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent ${
+        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-white text-black font-bold focus:outline-none focus:border-cyan-400 ${
           error ? 'border-red-500' : ''
         } ${className}`}
         {...props}
       />
       {error && (
-        <p className="mt-1 text-sm text-red-600">{error}</p>
+        <p className="mt-2 text-sm text-yellow-400 font-bold">{error}</p>
       )}
     </div>
   );
 };
 
 /**
- * Empty State Component
+ * 90s Empty State Component
  */
 export const EmptyState = ({ icon: Icon, title, description, action }) => {
   return (
     <div className="text-center py-12">
-      {Icon && <Icon className="mx-auto h-12 w-12 text-gray-400" />}
-      <h3 className="mt-2 text-sm font-semibold text-gray-900">{title}</h3>
+      {Icon && <Icon className="mx-auto h-16 w-16 text-cyan-400" />}
+      <h3 className="mt-4 text-xl font-bold uppercase text-white">{title}</h3>
       {description && (
-        <p className="mt-1 text-sm text-gray-500">{description}</p>
+        <p className="mt-2 text-base text-gray-300">{description}</p>
       )}
-      {action && <div className="mt-6">{action}</div>}
+      {action && <div className="mt-8">{action}</div>}
     </div>
   );
 };

@@ -86,20 +86,20 @@ const Register = () => {
   // Step 1: Choose Role
   if (step === 1 && !role) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-purple-900 bg-dots flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-2xl">
           <div className="flex justify-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <Music className="h-12 w-12 text-red-600" />
-              <span className="text-3xl font-bold text-gray-900">BookedUp</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <Music className="h-16 w-16 text-yellow-400 drop-shadow-[0_0_15px_rgba(255,255,0,0.8)]" />
+              <span className="text-4xl font-black text-white uppercase neon-glow">BookedUp</span>
             </Link>
           </div>
 
-          <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-            Join BookedUp
+          <h2 className="mt-8 text-center text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-400 uppercase tracking-wider">
+            JOIN BOOKEDUP!
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            How would you like to use BookedUp?
+          <p className="mt-4 text-center text-lg font-bold text-white">
+            How would you like to use BookedUp? 🎉
           </p>
         </div>
 
@@ -109,42 +109,42 @@ const Register = () => {
             <Card
               hover
               onClick={() => setRole('client')}
-              className="p-8 cursor-pointer hover:border-red-500 transition-all"
+              className="p-8 cursor-pointer bg-gradient-to-br from-cyan-400 to-blue-600 border-8 border-black hover:scale-105 transition-transform"
             >
               <div className="text-center">
-                <div className="mx-auto h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
-                  <Briefcase className="h-8 w-8 text-red-600" />
+                <div className="mx-auto h-20 w-20 bg-yellow-400 border-4 border-black flex items-center justify-center">
+                  <Briefcase className="h-10 w-10 text-black" />
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                  I'm a Client
+                <h3 className="mt-6 text-2xl font-black uppercase text-white">
+                  I'M A CLIENT
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Book talented performers for your events
+                <p className="mt-3 text-sm font-bold text-black bg-white/90 px-3 py-2">
+                  Book talented performers for your events!
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600 text-left">
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
-                    <span>Browse thousands of performers</span>
+                <ul className="mt-6 space-y-3 text-sm font-bold text-white text-left">
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
+                    <span>Browse THOUSANDS of performers</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
                     <span>Secure booking & payments</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
                     <span>Direct messaging with artists</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
-                    <span>Read verified reviews</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
+                    <span>Read VERIFIED reviews</span>
                   </li>
                 </ul>
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   className="w-full mt-6"
                   onClick={() => setRole('client')}
                 >
-                  Continue as Client
+                  CONTINUE AS CLIENT
                 </Button>
               </div>
             </Card>
@@ -153,51 +153,51 @@ const Register = () => {
             <Card
               hover
               onClick={() => setRole('performer')}
-              className="p-8 cursor-pointer hover:border-red-500 transition-all"
+              className="p-8 cursor-pointer bg-gradient-to-br from-pink-500 to-purple-600 border-8 border-black hover:scale-105 transition-transform"
             >
               <div className="text-center">
-                <div className="mx-auto h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
-                  <Music className="h-8 w-8 text-red-600" />
+                <div className="mx-auto h-20 w-20 bg-yellow-400 border-4 border-black flex items-center justify-center">
+                  <Music className="h-10 w-10 text-black" />
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                  I'm a Performer
+                <h3 className="mt-6 text-2xl font-black uppercase text-white">
+                  I'M A PERFORMER
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Get booked for amazing events
+                <p className="mt-3 text-sm font-bold text-black bg-white/90 px-3 py-2">
+                  Get booked for AWESOME events!
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-gray-600 text-left">
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
-                    <span>Create your profile for free</span>
+                <ul className="mt-6 space-y-3 text-sm font-bold text-white text-left">
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
+                    <span>Create your profile for FREE</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
                     <span>Get discovered by clients</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
-                    <span>Manage bookings easily</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
+                    <span>Manage bookings EASILY</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-red-600 mr-2">✓</span>
-                    <span>Secure payments guaranteed</span>
+                  <li className="flex items-start bg-black/20 px-3 py-2">
+                    <span className="text-yellow-400 mr-2 text-lg">✓</span>
+                    <span>Secure payments GUARANTEED</span>
                   </li>
                 </ul>
                 <Button
-                  variant="primary"
+                  variant="secondary"
                   className="w-full mt-6"
                   onClick={() => setRole('performer')}
                 >
-                  Continue as Performer
+                  CONTINUE AS PERFORMER
                 </Button>
               </div>
             </Card>
           </div>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className="mt-6 text-center text-lg font-bold text-white bg-black/40 px-6 py-3 border-4 border-pink-500">
             Already have an account?{' '}
-            <Link to="/login" className="font-medium text-red-600 hover:text-red-500">
-              Sign in
+            <Link to="/login" className="text-yellow-400 hover:text-cyan-400 uppercase underline">
+              SIGN IN HERE!
             </Link>
           </p>
         </div>
@@ -207,76 +207,76 @@ const Register = () => {
 
   // Step 2: Registration Form
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-purple-900 bg-dots flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <Music className="h-12 w-12 text-red-600" />
-            <span className="text-3xl font-bold text-gray-900">BookedUp</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <Music className="h-16 w-16 text-yellow-400 drop-shadow-[0_0_15px_rgba(255,255,0,0.8)]" />
+            <span className="text-4xl font-black text-white uppercase neon-glow">BookedUp</span>
           </Link>
         </div>
 
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-          Create your {role} account
+        <h2 className="mt-8 text-center text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-400 uppercase tracking-wider">
+          CREATE YOUR {role} ACCOUNT
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-4 text-center text-lg font-bold text-white">
           Already have an account?{' '}
-          <Link to="/login" className="font-medium text-red-600 hover:text-red-500">
-            Sign in
+          <Link to="/login" className="text-yellow-400 hover:text-cyan-400 uppercase underline">
+            SIGN IN!
           </Link>
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <Card className="px-4 py-8 sm:px-10">
+        <Card className="px-4 py-8 sm:px-10 border-8 border-black bg-gradient-to-br from-pink-500 to-purple-600">
           {/* OAuth Buttons */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             <button
               onClick={() => handleOAuthRegister('google')}
-              className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-white text-base font-black uppercase text-black hover:bg-yellow-400 transition-all"
             >
-              <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
               </svg>
-              Sign up with Google
+              GOOGLE SIGNUP
             </button>
 
             <button
               onClick={() => handleOAuthRegister('facebook')}
-              className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-white text-base font-black uppercase text-black hover:bg-cyan-400 transition-all"
             >
-              <svg className="w-5 h-5 mr-2" fill="#1877F2" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 mr-3" fill="#1877F2" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
-              Sign up with Facebook
+              FACEBOOK SIGNUP
             </button>
           </div>
 
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t-4 border-black" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or sign up with email</span>
+                <span className="px-4 bg-white text-black font-black uppercase border-4 border-black">OR USE EMAIL</span>
               </div>
             </div>
           </div>
 
           {/* Registration Form */}
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4 bg-white p-6 border-4 border-black">
             {errors.submit && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
-                {errors.submit}
+              <div className="bg-pink-500 border-4 border-black text-white px-4 py-3 rounded-none text-sm font-bold uppercase">
+                ⚠️ {errors.submit}
               </div>
             )}
 
             <div className="grid grid-cols-2 gap-4">
               <Input
-                label="First Name"
+                label="FIRST NAME"
                 type="text"
                 name="firstName"
                 value={formData.firstName}
@@ -287,7 +287,7 @@ const Register = () => {
               />
 
               <Input
-                label="Last Name"
+                label="LAST NAME"
                 type="text"
                 name="lastName"
                 value={formData.lastName}
@@ -299,7 +299,7 @@ const Register = () => {
             </div>
 
             <Input
-              label="Email Address"
+              label="EMAIL ADDRESS"
               type="email"
               name="email"
               value={formData.email}
@@ -310,7 +310,7 @@ const Register = () => {
             />
 
             <Input
-              label="Phone Number (Optional)"
+              label="PHONE (OPTIONAL)"
               type="tel"
               name="phone"
               value={formData.phone}
@@ -321,7 +321,7 @@ const Register = () => {
             />
 
             <Input
-              label="Password"
+              label="PASSWORD"
               type="password"
               name="password"
               value={formData.password}
@@ -333,7 +333,7 @@ const Register = () => {
             />
 
             <Input
-              label="Confirm Password"
+              label="CONFIRM PASSWORD"
               type="password"
               name="confirmPassword"
               value={formData.confirmPassword}
@@ -343,21 +343,21 @@ const Register = () => {
               autoComplete="new-password"
             />
 
-            <div className="flex items-center">
+            <div className="flex items-center bg-cyan-100 px-4 py-3 border-2 border-black">
               <input
                 id="terms"
                 name="terms"
                 type="checkbox"
                 required
-                className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
+                className="h-5 w-5 text-pink-600 focus:ring-cyan-500 border-4 border-black rounded-none"
               />
-              <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+              <label htmlFor="terms" className="ml-3 block text-sm font-bold text-black">
                 I agree to the{' '}
-                <Link to="/terms" className="text-red-600 hover:text-red-500">
-                  Terms of Service
+                <Link to="/terms" className="text-purple-600 hover:text-cyan-600 underline uppercase">
+                  Terms
                 </Link>{' '}
                 and{' '}
-                <Link to="/privacy" className="text-red-600 hover:text-red-500">
+                <Link to="/privacy" className="text-purple-600 hover:text-cyan-600 underline uppercase">
                   Privacy Policy
                 </Link>
               </label>
@@ -368,10 +368,10 @@ const Register = () => {
               variant="primary"
               size="lg"
               loading={loading}
-              className="w-full"
+              className="w-full text-lg"
             >
               <UserPlus className="w-5 h-5 mr-2" />
-              Create Account
+              CREATE ACCOUNT
             </Button>
           </form>
         </Card>
