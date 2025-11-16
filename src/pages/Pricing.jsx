@@ -89,86 +89,84 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-purple-900 via-black to-purple-900">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-red-600 to-red-700 text-white py-20">
+      <section className="gradient-rotate border-b-8 border-black text-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-5xl md:text-6xl font-black uppercase mb-6 neon-glow tracking-wider">
             Simple, Transparent Pricing
           </h1>
-          <p className="text-xl text-red-100">
-            Choose the plan that's right for you. No hidden fees.
+          <p className="text-xl font-bold text-white bg-black/60 px-6 py-4 border-4 border-yellow-400 max-w-2xl mx-auto">
+            Choose the plan that's RIGHT for you. NO HIDDEN FEES! 💰
           </p>
         </div>
       </section>
 
       {/* For Clients */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-black via-purple-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-400 uppercase tracking-wider mb-4">
               For Event Organizers
             </h2>
-            <p className="text-xl text-gray-600">
-              Always free to browse and book
+            <p className="text-xl font-bold text-cyan-400 bg-black/50 px-6 py-3 border-4 border-cyan-400 inline-block">
+              ALWAYS FREE to browse and book! 🎉
             </p>
           </div>
 
           <div className="max-w-md mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden">
-              <div className="p-8">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {clientPlans[0].name}
-                  </h3>
-                  <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-5xl font-bold text-gray-900">£{clientPlans[0].price}</span>
-                  </div>
-                  <p className="text-gray-600 mb-6">
-                    {clientPlans[0].description}
-                  </p>
+            <div className="retro-card-cyan p-8 retro-shadow border-4 border-black">
+              <div className="text-center">
+                <h3 className="text-3xl font-black text-black uppercase mb-2 bg-white/90 px-4 py-2">
+                  {clientPlans[0].name}
+                </h3>
+                <div className="flex items-baseline justify-center mb-2">
+                  <span className="text-6xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(255,255,0,0.8)]">£{clientPlans[0].price}</span>
                 </div>
-
-                <ul className="space-y-4 mb-8">
-                  {clientPlans[0].features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      {feature.included ? (
-                        <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      ) : (
-                        <X className="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
-                      )}
-                      <span className={feature.included ? 'text-gray-900' : 'text-gray-500'}>
-                        {feature.text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link to={clientPlans[0].link}>
-                  <Button variant="primary" size="lg" className="w-full">
-                    {clientPlans[0].cta}
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <p className="text-black font-bold mb-6 bg-white/80 px-4 py-2 border-2 border-black">
+                  {clientPlans[0].description}
+                </p>
               </div>
+
+              <ul className="space-y-4 mb-8">
+                {clientPlans[0].features.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    {feature.included ? (
+                      <Check className="w-6 h-6 text-black mr-3 mt-0.5 flex-shrink-0" />
+                    ) : (
+                      <X className="w-6 h-6 text-black/40 mr-3 mt-0.5 flex-shrink-0" />
+                    )}
+                    <span className={`font-bold text-sm ${feature.included ? 'text-black bg-white/80 px-2 py-1' : 'text-black/60'}`}>
+                      {feature.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link to={clientPlans[0].link}>
+                <Button variant="secondary" size="lg" className="w-full text-lg">
+                  {clientPlans[0].cta}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-600 mt-6">
+          <p className="text-center text-sm font-bold text-cyan-400 mt-6 bg-black/50 px-6 py-3 border-2 border-cyan-400 inline-block">
             * A small 5% booking fee applies to help us maintain and improve the platform
           </p>
         </div>
       </section>
 
       {/* For Performers */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-purple-900 to-black border-y-8 border-pink-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-500 uppercase tracking-wider mb-4">
               For Performers
             </h2>
-            <p className="text-xl text-gray-600">
-              Choose the plan that fits your ambitions
+            <p className="text-xl font-bold text-white bg-black/60 px-6 py-3 border-4 border-yellow-400 inline-block">
+              Choose the plan that fits your AMBITIONS! 🎸
             </p>
           </div>
 
@@ -178,42 +176,46 @@ const Pricing = () => {
               return (
                 <div
                   key={index}
-                  className={`relative bg-white rounded-2xl shadow-xl overflow-hidden ${
-                    plan.popular ? 'ring-2 ring-red-600' : 'border border-gray-200'
+                  className={`relative ${
+                    index === 0 ? 'retro-card-cyan' :
+                    index === 1 ? 'retro-card-pink' :
+                    'retro-card'
+                  } overflow-hidden retro-shadow border-4 border-black ${
+                    plan.popular ? 'border-8 border-yellow-400' : ''
                   }`}
                 >
                   {plan.popular && (
-                    <div className="bg-red-600 text-white text-sm font-semibold text-center py-2">
-                      Most Popular
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-sm font-black uppercase text-center py-3 border-b-4 border-black">
+                      ⭐ MOST POPULAR ⭐
                     </div>
                   )}
 
                   <div className="p-8">
                     <div className="text-center mb-6">
-                      <Icon className="w-12 h-12 text-red-600 mx-auto mb-3" />
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      <Icon className="w-16 h-16 text-black mx-auto mb-3" />
+                      <h3 className="text-3xl font-black text-black uppercase mb-2 bg-white/90 px-3 py-2">
                         {plan.name}
                       </h3>
                       <div className="flex items-baseline justify-center mb-2">
-                        <span className="text-5xl font-bold text-gray-900">£{plan.price}</span>
+                        <span className="text-5xl font-black text-yellow-400 drop-shadow-[0_0_10px_rgba(255,255,0,0.8)]">£{plan.price}</span>
                         {plan.period && (
-                          <span className="text-gray-600 ml-2">{plan.period}</span>
+                          <span className="text-black font-bold ml-2 bg-white/80 px-2 py-1">{plan.period}</span>
                         )}
                       </div>
-                      <p className="text-gray-600">
+                      <p className="text-black font-bold bg-white/80 px-3 py-2 border-2 border-black">
                         {plan.description}
                       </p>
                     </div>
 
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-start text-sm">
                           {feature.included ? (
-                            <Check className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <Check className="w-5 h-5 text-black mr-2 mt-0.5 flex-shrink-0" />
                           ) : (
-                            <X className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" />
+                            <X className="w-5 h-5 text-black/40 mr-2 mt-0.5 flex-shrink-0" />
                           )}
-                          <span className={feature.included ? 'text-gray-900' : 'text-gray-500'}>
+                          <span className={`font-bold ${feature.included ? 'text-black bg-white/80 px-2 py-0.5' : 'text-black/60'}`}>
                             {feature.text}
                           </span>
                         </li>
@@ -222,9 +224,9 @@ const Pricing = () => {
 
                     <Link to={plan.link}>
                       <Button
-                        variant={plan.popular ? 'primary' : 'outline'}
+                        variant={plan.popular ? 'neon' : 'secondary'}
                         size="lg"
-                        className="w-full"
+                        className="w-full text-lg"
                       >
                         {plan.cta}
                         <ArrowRight className="w-5 h-5 ml-2" />
@@ -236,61 +238,61 @@ const Pricing = () => {
             })}
           </div>
 
-          <div className="mt-12 bg-blue-50 rounded-xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Need something custom?
+          <div className="mt-12 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-600 border-4 border-black p-8 text-center retro-shadow">
+            <h3 className="text-2xl font-black uppercase text-black mb-3 bg-white/90 px-4 py-2 inline-block">
+              Need something CUSTOM?
             </h3>
-            <p className="text-gray-600 mb-4">
-              For agencies or high-volume performers, we offer enterprise solutions.
+            <p className="text-black font-bold mb-4 bg-white/80 px-4 py-2 border-2 border-black inline-block">
+              For agencies or high-volume performers, we offer ENTERPRISE solutions! 🚀
             </p>
             <Link to="/contact">
-              <Button variant="outline">Contact Sales</Button>
+              <Button variant="secondary" className="text-lg">Contact Sales</Button>
             </Link>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-black via-purple-900 to-black">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-white uppercase neon-glow-cyan tracking-wider mb-12">
             Frequently Asked Questions
           </h2>
 
           <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="retro-card-cyan p-6 retro-shadow">
+              <h3 className="text-xl font-black uppercase text-black mb-2 bg-white/90 px-3 py-1">
                 Can I upgrade or downgrade my plan?
               </h3>
-              <p className="text-gray-600">
-                Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.
+              <p className="text-black font-bold text-sm bg-white/80 px-3 py-2 border-2 border-black">
+                YES! You can upgrade or downgrade your plan at ANY TIME. Changes will be reflected in your next billing cycle.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="retro-card-pink p-6 retro-shadow">
+              <h3 className="text-xl font-black uppercase text-black mb-2 bg-white/90 px-3 py-1">
                 How do commissions work?
               </h3>
-              <p className="text-gray-600">
-                Commissions are automatically deducted from each booking payment. The percentage depends on your plan: 15% for Basic, 10% for Premium, and 5% for Pro.
+              <p className="text-black font-bold text-sm bg-white/80 px-3 py-2 border-2 border-black">
+                Commissions are AUTOMATICALLY deducted from each booking payment. The percentage depends on your plan: 15% for Basic, 10% for Premium, and 5% for Pro.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="retro-card p-6 retro-shadow">
+              <h3 className="text-xl font-black uppercase text-black mb-2 bg-white/90 px-3 py-1">
                 Is there a contract?
               </h3>
-              <p className="text-gray-600">
-                No contracts! Premium and Pro plans are month-to-month. Cancel anytime with no penalties.
+              <p className="text-black font-bold text-sm bg-white/80 px-3 py-2 border-2 border-black">
+                NO CONTRACTS! Premium and Pro plans are MONTH-TO-MONTH. Cancel anytime with NO PENALTIES! 🎉
               </p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="bg-gradient-to-br from-lime-400 to-green-600 border-4 border-black p-6 retro-shadow">
+              <h3 className="text-xl font-black uppercase text-black mb-2 bg-white/90 px-3 py-1">
                 What payment methods do you accept?
               </h3>
-              <p className="text-gray-600">
-                We accept all major credit and debit cards through our secure payment processor, Stripe.
+              <p className="text-black font-bold text-sm bg-white/80 px-3 py-2 border-2 border-black">
+                We accept ALL major credit and debit cards through our SECURE payment processor, Stripe! 💳
               </p>
             </div>
           </div>
