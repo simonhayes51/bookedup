@@ -26,14 +26,14 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 border-b-4 border-black sticky top-0 z-40 retro-shadow">
+    <nav className="gradient-rotate border-b-8 border-black sticky top-0 z-40 retro-shadow neon-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 group">
-              <Music className="h-10 w-10 text-yellow-400 drop-shadow-[0_0_10px_rgba(255,255,0,0.7)]" />
-              <span className="text-2xl font-black text-white uppercase tracking-wider neon-glow">BookedUp</span>
+              <Music className="h-10 w-10 text-yellow-400 drop-shadow-[0_0_10px_rgba(255,255,0,0.7)] wiggle" />
+              <span className="text-2xl font-black text-white uppercase tracking-wider neon-glow pulse-glow">BookedUp</span>
             </Link>
           </div>
 
@@ -109,13 +109,13 @@ const Navbar = () => {
               <>
                 <Link
                   to="/login"
-                  className="text-sm font-black uppercase text-white hover:text-yellow-400 transition-colors px-4 py-2"
+                  className="text-sm font-black uppercase text-white hover:text-yellow-400 transition-colors px-4 py-2 neon-glow-cyan"
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/register"
-                  className="inline-flex items-center px-6 py-3 text-sm font-black uppercase text-black bg-yellow-400 border-4 border-black rounded-none retro-shadow hover:bg-yellow-500 transition-all"
+                  className="inline-flex items-center px-6 py-3 text-sm font-black uppercase text-black bg-yellow-400 border-4 border-black rounded-none retro-shadow hover:bg-yellow-500 transition-all pulse-glow shake"
                 >
                   Get Started
                 </Link>
