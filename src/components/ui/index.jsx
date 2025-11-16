@@ -61,8 +61,8 @@ export const Input = ({
         </label>
       )}
       <input
-        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-white text-black font-bold focus:outline-none focus:border-cyan-400 ${
-          error ? 'border-red-500' : ''
+        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-yellow-400 text-black font-black placeholder-black/50 focus:outline-none focus:border-cyan-400 focus:bg-cyan-300 transition-all ${
+          error ? 'border-red-500 bg-pink-300' : ''
         } ${className}`}
         {...props}
       />

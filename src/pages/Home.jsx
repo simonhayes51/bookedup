@@ -156,14 +156,19 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className={`text-center retro-card p-6 hover:scale-110 transition-transform ${index % 2 === 0 ? 'float' : 'wiggle'}`}>
-                <div className={`inline-flex items-center justify-center h-20 w-20 bg-gradient-to-br from-pink-500 to-purple-600 border-4 border-black mb-4 ${index % 2 === 0 ? 'spin-slow' : 'pulse-glow'}`}>
+              <div key={index} className={`text-center ${
+                index === 0 ? 'retro-card-cyan' :
+                index === 1 ? 'retro-card-pink' :
+                index === 2 ? 'retro-card' :
+                'bg-gradient-to-br from-lime-400 to-green-600 border-4 border-black'
+              } p-6 hover:scale-110 transition-transform retro-shadow ${index % 2 === 0 ? 'float' : 'wiggle'}`}>
+                <div className={`inline-flex items-center justify-center h-20 w-20 bg-black border-4 border-yellow-400 mb-4 ${index % 2 === 0 ? 'spin-slow' : 'pulse-glow'}`}>
                   <feature.icon className="h-10 w-10 text-yellow-400" />
                 </div>
-                <h3 className="text-xl font-black uppercase text-black mb-3 tracking-wide">
+                <h3 className="text-xl font-black uppercase text-white mb-3 tracking-wide neon-glow-yellow">
                   {feature.title}
                 </h3>
-                <p className="text-black font-bold text-sm">
+                <p className="text-white font-bold text-sm bg-black/40 px-3 py-2 border-2 border-white">
                   {feature.description}
                 </p>
               </div>
@@ -189,22 +194,27 @@ const Home = () => {
               <div key={index} className="relative">
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-1 bg-gradient-to-r from-pink-500 to-cyan-500 -ml-4 z-0" style={{ width: 'calc(100% - 2rem)' }} />
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-2 bg-gradient-to-r from-pink-500 via-yellow-400 to-cyan-500 -ml-4 z-0 neon-border" style={{ width: 'calc(100% - 2rem)' }} />
                 )}
 
-                <div className="relative retro-card p-6 hover:scale-105 transition-transform">
+                <div className={`relative ${
+                  index === 0 ? 'retro-card-pink' :
+                  index === 1 ? 'retro-card-cyan' :
+                  index === 2 ? 'retro-card' :
+                  'bg-gradient-to-br from-lime-400 to-green-600 border-4 border-black'
+                } p-6 hover:scale-105 transition-transform retro-shadow float`}>
                   <div className={`inline-flex items-center justify-center h-20 w-20 border-4 border-black text-3xl font-black mb-4 ${
-                    index === 0 ? 'bg-pink-500' :
-                    index === 1 ? 'bg-cyan-400' :
-                    index === 2 ? 'bg-yellow-400' :
-                    'bg-lime-400'
-                  } text-black`}>
+                    index === 0 ? 'bg-yellow-400 neon-glow-yellow' :
+                    index === 1 ? 'bg-pink-500 neon-glow' :
+                    index === 2 ? 'bg-cyan-400 neon-glow-cyan' :
+                    'bg-yellow-400 neon-glow-yellow'
+                  } text-black wiggle`}>
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-black uppercase text-black mb-3 tracking-wide">
+                  <h3 className="text-xl font-black uppercase text-white mb-3 tracking-wide neon-glow-cyan">
                     {item.title}
                   </h3>
-                  <p className="text-black font-bold text-sm">
+                  <p className="text-white font-bold text-sm bg-black/50 px-3 py-2 border-2 border-white">
                     {item.description}
                   </p>
                 </div>

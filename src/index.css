@@ -10,7 +10,13 @@ html, body, #root {
   body {
     background: linear-gradient(135deg, #1a0033 0%, #2d004d 50%, #1a0033 100%);
     background-attachment: fixed;
-    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    font-family: Impact, 'Arial Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+  }
+
+  input, textarea, select {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
   }
 }
 
@@ -70,9 +76,9 @@ html, body, #root {
     transform: translate(4px, 4px);
   }
 
-  /* RETRO CARD */
+  /* RETRO CARD - NO MORE WHITE! */
   .retro-card {
-    @apply bg-white rounded-none border-4 border-black;
+    @apply bg-gradient-to-br from-yellow-400 via-orange-400 to-pink-500 rounded-none border-4 border-black;
     box-shadow:
       8px 8px 0px rgba(0, 0, 0, 0.3),
       12px 12px 0px rgba(255, 16, 240, 0.2);
@@ -84,6 +90,21 @@ html, body, #root {
       12px 12px 0px rgba(0, 0, 0, 0.3),
       16px 16px 0px rgba(0, 240, 255, 0.3);
     transform: translate(-2px, -2px) rotate(-1deg);
+  }
+
+  /* NEON CARD variants */
+  .retro-card-cyan {
+    @apply bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-none border-4 border-black;
+    box-shadow:
+      8px 8px 0px rgba(0, 0, 0, 0.3),
+      12px 12px 0px rgba(0, 240, 255, 0.4);
+  }
+
+  .retro-card-pink {
+    @apply bg-gradient-to-br from-pink-500 via-purple-600 to-pink-700 rounded-none border-4 border-black;
+    box-shadow:
+      8px 8px 0px rgba(0, 0, 0, 0.3),
+      12px 12px 0px rgba(255, 16, 240, 0.4);
   }
 
   /* GRADIENT TEXT with animation */
