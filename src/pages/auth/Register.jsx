@@ -233,7 +233,7 @@ const Register = () => {
           <div className="space-y-4">
             <button
               onClick={() => handleOAuthRegister('google')}
-              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-white text-base font-black uppercase text-black hover:bg-yellow-400 transition-all"
+              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-gradient-to-r from-yellow-400 to-orange-500 text-base font-black uppercase text-black hover:from-cyan-400 hover:to-blue-500 transition-all pulse-glow"
             >
               <svg className="w-6 h-6 mr-3" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -246,7 +246,7 @@ const Register = () => {
 
             <button
               onClick={() => handleOAuthRegister('facebook')}
-              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-white text-base font-black uppercase text-black hover:bg-cyan-400 transition-all"
+              className="w-full flex items-center justify-center px-6 py-4 border-4 border-black rounded-none retro-shadow bg-gradient-to-r from-cyan-400 to-blue-600 text-base font-black uppercase text-white hover:from-pink-500 hover:to-purple-600 transition-all pulse-glow"
             >
               <svg className="w-6 h-6 mr-3" fill="#1877F2" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -261,15 +261,15 @@ const Register = () => {
                 <div className="w-full border-t-4 border-black" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-black font-black uppercase border-4 border-black">OR USE EMAIL</span>
+                <span className="px-4 bg-black text-yellow-400 font-black uppercase border-4 border-yellow-400 neon-glow-yellow">OR USE EMAIL</span>
               </div>
             </div>
           </div>
 
           {/* Registration Form */}
-          <form onSubmit={handleSubmit} className="mt-6 space-y-4 bg-white p-6 border-4 border-black">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-600 p-6 border-4 border-black neon-border">
             {errors.submit && (
-              <div className="bg-pink-500 border-4 border-black text-white px-4 py-3 rounded-none text-sm font-bold uppercase">
+              <div className="bg-black border-4 border-yellow-400 text-yellow-400 px-4 py-3 rounded-none text-sm font-bold uppercase neon-glow-yellow">
                 ⚠️ {errors.submit}
               </div>
             )}
