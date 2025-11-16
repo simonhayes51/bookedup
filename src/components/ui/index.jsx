@@ -13,22 +13,22 @@ export const Button = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-none retro-shadow transition-all focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed border-4 border-black';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white hover:from-pink-600 hover:via-purple-600 hover:to-cyan-600',
-    secondary: 'bg-yellow-400 text-black hover:bg-yellow-500',
-    outline: 'border-4 border-black bg-white text-black hover:bg-gray-100',
-    neon: 'bg-black text-cyan-400 border-cyan-400 neon-border hover:text-pink-500',
-    danger: 'bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-red-600 hover:to-pink-600',
-    success: 'bg-gradient-to-r from-lime-400 to-green-500 text-black hover:from-lime-500 hover:to-green-600',
+    primary: 'bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-500',
+    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
+    outline: 'border-2 border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
+    neon: 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500',
+    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs',
-    md: 'px-6 py-3 text-sm',
-    lg: 'px-8 py-4 text-base',
-    xl: 'px-12 py-5 text-lg',
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-4 py-2 text-sm',
+    lg: 'px-5 py-2.5 text-base',
+    xl: 'px-6 py-3 text-base',
   };
 
   return (
@@ -56,21 +56,21 @@ export const Input = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-bold uppercase tracking-wide text-white mb-2">
+        <label className="block text-sm font-medium text-gray-200 mb-2">
           {label}
         </label>
       )}
       <input
-        className={`w-full px-4 py-3 border-4 border-black rounded-none bg-yellow-400 text-black font-black placeholder-black/50 focus:outline-none focus:border-cyan-400 focus:bg-cyan-300 transition-all ${
-          error ? 'border-red-500 bg-pink-300' : ''
+        className={`w-full px-4 py-2 border border-gray-300 rounded bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all ${
+          error ? 'border-red-500 focus:ring-red-500' : ''
         } ${className}`}
         {...props}
       />
       {error && (
-        <p className="mt-2 text-sm text-yellow-400 font-bold">{error}</p>
+        <p className="mt-1 text-sm text-red-400">{error}</p>
       )}
       {helper && !error && (
-        <p className="mt-2 text-sm text-gray-300">{helper}</p>
+        <p className="mt-1 text-sm text-gray-400">{helper}</p>
       )}
     </div>
   );
