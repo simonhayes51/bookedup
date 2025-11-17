@@ -13,7 +13,9 @@ import {
   Zap,
   Award,
   PiggyBank,
-  Edit2
+  Edit2,
+  Target,
+  FileText
 } from 'lucide-react';
 import { Button } from '../components/ui';
 
@@ -143,6 +145,22 @@ const Dashboard = () => {
       icon: Star,
       link: '/reviews',
       color: 'yellow'
+    },
+    {
+      title: 'Client Booking Portal',
+      description: 'Manage bookings & payments',
+      icon: FileText,
+      link: '/client-portal',
+      color: 'blue',
+      badge: 'Pro'
+    },
+    {
+      title: 'AI Lead Scoring',
+      description: 'Prioritize high-quality leads',
+      icon: Target,
+      link: '/leads',
+      color: 'purple',
+      badge: 'Pro'
     },
     {
       title: 'Messages',

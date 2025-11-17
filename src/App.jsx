@@ -26,6 +26,8 @@ import Verification from './pages/Verification';
 import FinancialDashboard from './pages/FinancialDashboard';
 import ProfileEditor from './pages/ProfileEditor';
 import ReviewManagement from './pages/ReviewManagement';
+import ClientBookingPortal from './pages/ClientBookingPortal';
+import LeadManagement from './pages/LeadManagement';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NotFound from './pages/NotFound';
 
@@ -140,6 +142,22 @@ function App() {
               element={
                 <PrivateRoute>
                   <ReviewManagement />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/client-portal"
+              element={
+                <PrivateRoute>
+                  <ClientBookingPortal />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/leads"
+              element={
+                <PrivateRoute>
+                  <LeadManagement />
                 </PrivateRoute>
               }
             />
