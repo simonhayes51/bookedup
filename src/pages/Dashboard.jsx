@@ -11,7 +11,9 @@ import {
   Users,
   ArrowRight,
   Zap,
-  Award
+  Award,
+  PiggyBank,
+  Edit2
 } from 'lucide-react';
 import { Button } from '../components/ui';
 
@@ -121,6 +123,28 @@ const Dashboard = () => {
       color: 'blue'
     },
     {
+      title: 'Financial Dashboard',
+      description: 'Track income, expenses, and taxes',
+      icon: PiggyBank,
+      link: '/financial',
+      color: 'green',
+      badge: 'Pro'
+    },
+    {
+      title: 'Profile Editor',
+      description: 'AI-powered profile optimization',
+      icon: Edit2,
+      link: '/profile-editor',
+      color: 'purple'
+    },
+    {
+      title: 'Review Management',
+      description: 'Showcase 248 five-star reviews',
+      icon: Star,
+      link: '/reviews',
+      color: 'yellow'
+    },
+    {
       title: 'Messages',
       description: 'Respond to client enquiries',
       icon: MessageSquare,
@@ -204,7 +228,8 @@ const Dashboard = () => {
                 purple: 'from-purple-500 to-purple-700',
                 blue: 'from-blue-500 to-blue-700',
                 green: 'from-green-500 to-green-700',
-                pink: 'from-pink-500 to-pink-700'
+                pink: 'from-pink-500 to-pink-700',
+                yellow: 'from-yellow-500 to-yellow-700'
               };
 
               return (

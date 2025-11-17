@@ -23,6 +23,9 @@ import PerformerCalendar from './pages/PerformerCalendar';
 import PackageBuilder from './pages/PackageBuilder';
 import SmartReplies from './pages/SmartReplies';
 import Verification from './pages/Verification';
+import FinancialDashboard from './pages/FinancialDashboard';
+import ProfileEditor from './pages/ProfileEditor';
+import ReviewManagement from './pages/ReviewManagement';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NotFound from './pages/NotFound';
 
@@ -113,6 +116,30 @@ function App() {
               element={
                 <PrivateRoute>
                   <Verification />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/financial"
+              element={
+                <PrivateRoute>
+                  <FinancialDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/profile-editor"
+              element={
+                <PrivateRoute>
+                  <ProfileEditor />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/reviews"
+              element={
+                <PrivateRoute>
+                  <ReviewManagement />
                 </PrivateRoute>
               }
             />
