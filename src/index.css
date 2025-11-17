@@ -2,125 +2,248 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Modern Design System for BookedUp */
+
 html, body, #root {
   height: 100%;
 }
 
 @layer base {
-  body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
-    background-attachment: fixed;
-    font-family: 'Arial', 'Helvetica', sans-serif;
-    font-weight: normal;
+  :root {
+    /* Brand Colors */
+    --color-primary: 139 92 246; /* purple-500 */
+    --color-primary-dark: 109 40 217; /* purple-600 */
+    --color-primary-light: 167 139 250; /* purple-400 */
+
+    /* Accent Colors */
+    --color-accent: 236 72 153; /* pink-500 */
+    --color-success: 34 197 94; /* green-500 */
+    --color-warning: 234 179 8; /* yellow-500 */
+    --color-error: 239 68 68; /* red-500 */
   }
 
-  input, textarea, select {
-    font-family: 'Arial', sans-serif;
-    font-weight: normal;
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 transition-all hover:shadow-md;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-lg border border-gray-100 p-6 transition-all hover:shadow-xl;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-500 shadow-sm hover:shadow;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border-2 border-gray-300 hover:bg-gray-50 focus:ring-gray-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-pink-600 text-white hover:bg-pink-700 focus:ring-pink-500 shadow-sm hover:shadow;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none transition-colors;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-purple-100 text-purple-700;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-error {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-12 sm:py-14 lg:py-16;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply card hover-lift cursor-pointer;
+  }
+
+  /* Premium Badge */
+  .premium-badge {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1;
+  }
+
+  /* Verified Badge */
+  .verified-badge {
+    @apply bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1;
+  }
+
+  /* Legacy classes for compatibility */
+  .gradient-rotate {
+    @apply gradient-primary;
+  }
+
+  .retro-card,
+  .retro-card-cyan,
+  .retro-card-pink {
+    @apply card;
   }
 }
 
 @layer utilities {
-  /* Subtle text shadow - no animations */
-  .neon-glow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* Text Shadows */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  /* Cyan glow variant */
-  .neon-glow-cyan {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Yellow glow variant */
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Legacy neon classes - mapped to modern equivalents */
+  .neon-glow,
+  .neon-glow-cyan,
   .neon-glow-yellow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    @apply text-shadow;
   }
 
-  /* Subtle shadow - minimal movement */
   .retro-shadow {
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+    @apply shadow-lg;
   }
 
-  /* Subtle pastel cards */
-  .retro-card {
-    @apply bg-gradient-to-br from-purple-200 via-blue-200 to-cyan-200 rounded-none border-2 border-gray-700;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Card variants */
-  .retro-card-cyan {
-    @apply bg-gradient-to-br from-cyan-200 via-blue-200 to-purple-200 rounded-none border-2 border-gray-700;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  .retro-card-pink {
-    @apply bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 rounded-none border-2 border-gray-700;
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Gradient text - no animation */
-  .gradient-text {
-    background: linear-gradient(90deg, #9b59b6, #3498db, #2ecc71);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Static gradient background */
-  .gradient-rotate {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-
-  /* Simple border */
   .neon-border {
-    border: 2px solid #667eea;
-  }
-
-  /* Remove all animations */
-  .bg-zigzag,
-  .bg-dots,
-  .bg-grid,
-  .bg-stripes,
-  .tv-static,
-  .float,
-  .bounce-wild,
-  .spin-slow,
-  .pulse-glow,
-  .wiggle,
-  .shake,
-  .rainbow,
-  .glitch {
-    /* Classes exist but do nothing */
+    @apply border-2 border-purple-600;
   }
 }
 
-/* Simple scrollbar */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+  @apply bg-gray-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #667eea;
-  border-radius: 0;
+  @apply bg-gray-300 rounded hover:bg-gray-400;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #764ba2;
+/* Focus Visible */
+*:focus-visible {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2;
 }
 
-/* Remove all animations */
-
-/* Selection styling */
+/* Selection */
 ::selection {
-  background: #667eea;
-  color: #ffffff;
+  @apply bg-purple-200 text-purple-900;
 }
 
 ::-moz-selection {
-  background: #667eea;
-  color: #ffffff;
+  @apply bg-purple-200 text-purple-900;
 }
