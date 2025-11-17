@@ -18,6 +18,9 @@ import Messages from './pages/Messages';
 import Settings from './pages/Settings';
 import HowItWorks from './pages/HowItWorks';
 import Pricing from './pages/Pricing';
+import Analytics from './pages/Analytics';
+import PerformerCalendar from './pages/PerformerCalendar';
+import PackageBuilder from './pages/PackageBuilder';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NotFound from './pages/NotFound';
 
@@ -68,6 +71,30 @@ function App() {
               element={
                 <PrivateRoute>
                   <Layout><Settings /></Layout>
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/analytics"
+              element={
+                <PrivateRoute>
+                  <Analytics />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/calendar"
+              element={
+                <PrivateRoute>
+                  <PerformerCalendar />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/packages"
+              element={
+                <PrivateRoute>
+                  <PackageBuilder />
                 </PrivateRoute>
               }
             />
