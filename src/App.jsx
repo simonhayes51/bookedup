@@ -18,6 +18,16 @@ import Messages from './pages/Messages';
 import Settings from './pages/Settings';
 import HowItWorks from './pages/HowItWorks';
 import Pricing from './pages/Pricing';
+import Analytics from './pages/Analytics';
+import PerformerCalendar from './pages/PerformerCalendar';
+import PackageBuilder from './pages/PackageBuilder';
+import SmartReplies from './pages/SmartReplies';
+import Verification from './pages/Verification';
+import FinancialDashboard from './pages/FinancialDashboard';
+import ProfileEditor from './pages/ProfileEditor';
+import ReviewManagement from './pages/ReviewManagement';
+import ClientBookingPortal from './pages/ClientBookingPortal';
+import LeadManagement from './pages/LeadManagement';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NotFound from './pages/NotFound';
 
@@ -68,6 +78,86 @@ function App() {
               element={
                 <PrivateRoute>
                   <Layout><Settings /></Layout>
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/analytics"
+              element={
+                <PrivateRoute>
+                  <Analytics />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/calendar"
+              element={
+                <PrivateRoute>
+                  <PerformerCalendar />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/packages"
+              element={
+                <PrivateRoute>
+                  <PackageBuilder />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/smart-replies"
+              element={
+                <PrivateRoute>
+                  <SmartReplies />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/verification"
+              element={
+                <PrivateRoute>
+                  <Verification />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/financial"
+              element={
+                <PrivateRoute>
+                  <FinancialDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/profile-editor"
+              element={
+                <PrivateRoute>
+                  <ProfileEditor />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/reviews"
+              element={
+                <PrivateRoute>
+                  <ReviewManagement />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/client-portal"
+              element={
+                <PrivateRoute>
+                  <ClientBookingPortal />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/leads"
+              element={
+                <PrivateRoute>
+                  <LeadManagement />
                 </PrivateRoute>
               }
             />
