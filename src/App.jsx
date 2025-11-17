@@ -21,6 +21,8 @@ import Pricing from './pages/Pricing';
 import Analytics from './pages/Analytics';
 import PerformerCalendar from './pages/PerformerCalendar';
 import PackageBuilder from './pages/PackageBuilder';
+import SmartReplies from './pages/SmartReplies';
+import Verification from './pages/Verification';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NotFound from './pages/NotFound';
 
@@ -95,6 +97,22 @@ function App() {
               element={
                 <PrivateRoute>
                   <PackageBuilder />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/smart-replies"
+              element={
+                <PrivateRoute>
+                  <SmartReplies />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/verification"
+              element={
+                <PrivateRoute>
+                  <Verification />
                 </PrivateRoute>
               }
             />
