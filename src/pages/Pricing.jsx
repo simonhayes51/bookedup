@@ -111,7 +111,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-800">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -119,26 +119,26 @@ const Pricing = () => {
             <Sparkles className="w-4 h-4" />
             Transparent Pricing
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Simple, Honest Pricing
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Choose the plan that's right for you. No hidden fees, no surprises.
           </p>
         </div>
       </section>
 
       {/* For Clients */}
-      <section className="section bg-white">
+      <section className="section bg-slate-800">
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               For Event Organizers
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Always Free to Book
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Browse, message, and book performers at no cost
             </p>
           </div>
@@ -146,13 +146,13 @@ const Pricing = () => {
           <div className="max-w-lg mx-auto">
             <div className="card-elevated overflow-hidden border-2 border-purple-200">
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 text-center border-b border-purple-200">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                <h3 className="text-3xl font-bold text-white mb-2">
                   {clientPlans[0].name}
                 </h3>
                 <div className="flex items-baseline justify-center mb-2">
                   <span className="text-6xl font-bold gradient-text">£{clientPlans[0].price}</span>
                 </div>
-                <p className="text-lg text-gray-700">
+                <p className="text-lg text-gray-200">
                   {clientPlans[0].description}
                 </p>
               </div>
@@ -166,7 +166,7 @@ const Pricing = () => {
                       ) : (
                         <X className="w-6 h-6 text-gray-300 mr-3 mt-0.5 flex-shrink-0" />
                       )}
-                      <span className={`text-base ${feature.included ? 'text-gray-900 font-medium' : 'text-gray-400'}`}>
+                      <span className={`text-base ${feature.included ? 'text-white font-medium' : 'text-gray-400'}`}>
                         {feature.text}
                       </span>
                     </li>
@@ -196,10 +196,10 @@ const Pricing = () => {
             <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               For Performers
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Choose Your Growth Plan
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Start free, upgrade as you grow your business
             </p>
           </div>
@@ -226,16 +226,16 @@ const Pricing = () => {
                       <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${plan.gradient} rounded-2xl mb-4 shadow-lg`}>
                         <Icon className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-2xl font-bold text-white mb-3">
                         {plan.name}
                       </h3>
                       <div className="flex items-baseline justify-center mb-2">
-                        <span className="text-5xl font-bold text-gray-900">£{plan.price}</span>
+                        <span className="text-5xl font-bold text-white">£{plan.price}</span>
                         {plan.period && (
-                          <span className="text-lg text-gray-600 ml-2">{plan.period}</span>
+                          <span className="text-lg text-gray-300 ml-2">{plan.period}</span>
                         )}
                       </div>
-                      <p className="text-gray-600 text-base">
+                      <p className="text-gray-300 text-base">
                         {plan.description}
                       </p>
                     </div>
@@ -248,7 +248,7 @@ const Pricing = () => {
                           ) : (
                             <X className="w-5 h-5 text-gray-300 mr-2 mt-0.5 flex-shrink-0" />
                           )}
-                          <span className={feature.included ? 'text-gray-900' : 'text-gray-400'}>
+                          <span className={feature.included ? 'text-white' : 'text-gray-400'}>
                             {feature.text}
                           </span>
                         </li>
@@ -273,10 +273,10 @@ const Pricing = () => {
           </div>
 
           <div className="mt-16 card-elevated p-10 text-center max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200">
-            <h3 className="text-3xl font-bold text-gray-900 mb-3">
+            <h3 className="text-3xl font-bold text-white mb-3">
               Need something custom?
             </h3>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-200 mb-6">
               For agencies or high-volume performers, we offer enterprise solutions tailored to your needs.
             </p>
             <Link to="/contact">
@@ -289,13 +289,13 @@ const Pricing = () => {
       </section>
 
       {/* FAQ */}
-      <section className="section bg-white">
+      <section className="section bg-slate-800">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Everything you need to know about our pricing
             </p>
           </div>
@@ -303,10 +303,10 @@ const Pricing = () => {
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="card hover-lift p-6 border-2 border-gray-100 hover:border-purple-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>
@@ -327,12 +327,12 @@ const Pricing = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/performers">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-base font-semibold shadow-xl">
+                <Button size="lg" className="bg-slate-800 text-purple-600 hover:bg-gray-100 px-8 py-4 text-base font-semibold shadow-xl">
                   Find Performers
                 </Button>
               </Link>
               <Link to="/register?type=performer">
-                <Button size="lg" className="bg-white/10 text-white hover:bg-white/20 border-2 border-white/20 px-8 py-4 text-base font-semibold backdrop-blur-sm">
+                <Button size="lg" className="bg-slate-800/10 text-white hover:bg-slate-800/20 border-2 border-white/20 px-8 py-4 text-base font-semibold backdrop-blur-sm">
                   Join as Performer
                 </Button>
               </Link>

@@ -180,53 +180,53 @@ Best,
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Sparkles className="w-10 h-10 text-purple-400" />
-            <h1 className="text-4xl font-bold text-gray-900">AI Smart Replies</h1>
+            <h1 className="text-4xl font-bold text-white">AI Smart Replies</h1>
           </div>
-          <p className="text-gray-600">Respond faster, book more - powered by AI</p>
+          <p className="text-gray-300">Respond faster, book more - powered by AI</p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Avg Response Time</div>
+                <div className="text-gray-300 text-sm mb-1">Avg Response Time</div>
                 <div className="text-3xl font-bold text-purple-600">{stats.avgResponseTime}</div>
               </div>
               <Zap className="w-10 h-10 text-purple-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Conversion Rate</div>
+                <div className="text-gray-300 text-sm mb-1">Conversion Rate</div>
                 <div className="text-3xl font-bold text-green-600">{stats.conversionRate}%</div>
               </div>
               <TrendingUp className="w-10 h-10 text-green-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Replies Sent</div>
+                <div className="text-gray-300 text-sm mb-1">Replies Sent</div>
                 <div className="text-3xl font-bold text-blue-600">{stats.repliesSent}</div>
               </div>
               <MessageSquare className="w-10 h-10 text-blue-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Time Saved</div>
+                <div className="text-gray-300 text-sm mb-1">Time Saved</div>
                 <div className="text-3xl font-bold text-yellow-600">{stats.timeSaved}</div>
               </div>
               <Sparkles className="w-10 h-10 text-yellow-600" />
@@ -236,8 +236,8 @@ Best,
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Enquiries List */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Enquiries</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">Recent Enquiries</h2>
             <div className="space-y-4">
               {enquiries.map((enquiry) => (
                 <div
@@ -245,21 +245,21 @@ Best,
                   className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                     selectedEnquiry?.id === enquiry.id
                       ? 'border-purple-500 bg-purple-50'
-                      : 'border-gray-200 hover:border-purple-300 hover:bg-gray-50'
+                      : 'border-gray-200 hover:border-purple-300 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
                   }`}
                   onClick={() => handleGenerateReplies(enquiry)}
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <div className="font-semibold text-gray-900">{enquiry.client}</div>
-                      <div className="text-sm text-gray-600">{enquiry.event}</div>
+                      <div className="font-semibold text-white">{enquiry.client}</div>
+                      <div className="text-sm text-gray-300">{enquiry.event}</div>
                     </div>
                     <Button size="sm" variant="primary">
                       <Sparkles className="w-4 h-4 mr-1" />
                       Generate
                     </Button>
                   </div>
-                  <div className="text-sm text-gray-700 mb-2 line-clamp-2">{enquiry.message}</div>
+                  <div className="text-sm text-gray-200 mb-2 line-clamp-2">{enquiry.message}</div>
                   <div className="flex gap-4 text-xs text-gray-500">
                     <span>📅 {enquiry.date}</span>
                     <span>💰 {enquiry.budget}</span>
@@ -271,12 +271,12 @@ Best,
           </div>
 
           {/* Generated Replies */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">AI-Generated Replies</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">AI-Generated Replies</h2>
 
             {!selectedEnquiry ? (
               <div className="text-center py-12 text-gray-500">
-                <Sparkles className="w-16 h-16 mx-auto mb-4 text-gray-600" />
+                <Sparkles className="w-16 h-16 mx-auto mb-4 text-gray-300" />
                 <p className="text-lg font-semibold mb-2">Select an enquiry to generate replies</p>
                 <p className="text-sm">Our AI will create 3 personalized response options</p>
               </div>
@@ -286,7 +286,7 @@ Best,
                   <div key={index} className="border-2 border-gray-200 rounded-lg overflow-hidden hover:border-purple-300 transition-colors">
                     <div className="bg-gradient-to-r from-purple-50 to-blue-50 px-4 py-3 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-gray-900">{reply.tone}</span>
+                        <span className="font-semibold text-white">{reply.tone}</span>
                         <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">
                           {reply.convertRate}% conversion
                         </span>
@@ -294,12 +294,12 @@ Best,
                       <div className="flex gap-2">
                         <button
                           onClick={() => copyToClipboard(reply.content, index)}
-                          className="p-2 hover:bg-white/50 rounded transition-colors"
+                          className="p-2 hover:bg-slate-800/50 rounded transition-colors"
                         >
                           {copiedIndex === index ? (
                             <Check className="w-5 h-5 text-green-600" />
                           ) : (
-                            <Copy className="w-5 h-5 text-gray-600" />
+                            <Copy className="w-5 h-5 text-gray-300" />
                           )}
                         </button>
                         <button className="px-3 py-1 bg-purple-600 text-white rounded hover:bg-purple-700 transition-colors text-sm font-semibold">
@@ -308,8 +308,8 @@ Best,
                         </button>
                       </div>
                     </div>
-                    <div className="p-4 bg-white max-h-96 overflow-y-auto">
-                      <pre className="whitespace-pre-wrap font-sans text-sm text-gray-700 leading-relaxed">
+                    <div className="p-4 bg-slate-800 max-h-96 overflow-y-auto">
+                      <pre className="whitespace-pre-wrap font-sans text-sm text-gray-200 leading-relaxed">
                         {reply.content}
                       </pre>
                     </div>

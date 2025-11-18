@@ -117,14 +117,14 @@ Specialising in weddings, I work closely with couples to create the perfect soun
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Profile Editor</h1>
-              <p className="text-gray-600">Create a profile that converts browsers into bookings</p>
+              <h1 className="text-4xl font-bold text-white mb-2">Profile Editor</h1>
+              <p className="text-gray-300">Create a profile that converts browsers into bookings</p>
             </div>
             <div className="flex gap-3">
               <Button variant="secondary" onClick={() => setShowPreview(!showPreview)}>
@@ -153,21 +153,21 @@ Specialising in weddings, I work closely with couples to create the perfect soun
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="text-sm text-purple-100 mb-1">Completeness</div>
               <div className="text-2xl font-bold">{contentScore.completeness}%</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="text-sm text-purple-100 mb-1">SEO Strength</div>
               <div className="text-2xl font-bold">{contentScore.seoStrength}%</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="text-sm text-purple-100 mb-1">Media Quality</div>
               <div className="text-2xl font-bold">{contentScore.mediaQuality}%</div>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+          <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
             <div className="flex items-center gap-2 mb-3">
               <Sparkles className="w-5 h-5" />
               <div className="font-semibold">AI Suggestions to Reach 95%+</div>
@@ -185,32 +185,32 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
         {/* Performance Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Profile Views</div>
-            <div className="text-3xl font-bold text-gray-900">{performanceStats.profileViews.toLocaleString()}</div>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Profile Views</div>
+            <div className="text-3xl font-bold text-white">{performanceStats.profileViews.toLocaleString()}</div>
             <div className="text-sm text-green-600 font-semibold mt-1">
               ↑ {performanceStats.viewsGrowth}% this month
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Enquiries</div>
-            <div className="text-3xl font-bold text-gray-900">{performanceStats.enquiries}</div>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Enquiries</div>
+            <div className="text-3xl font-bold text-white">{performanceStats.enquiries}</div>
             <div className="text-sm text-green-600 font-semibold mt-1">
               ↑ {performanceStats.enquiriesGrowth}% this month
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Conversion Rate</div>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Conversion Rate</div>
             <div className="text-3xl font-bold text-purple-600">{performanceStats.conversionRate}%</div>
             <div className="text-sm text-gray-500 mt-1">
               Industry avg: 18%
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Search Ranking</div>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Search Ranking</div>
             <div className="text-3xl font-bold text-green-600">#{performanceStats.searchRanking}</div>
             <div className="text-sm text-gray-500 mt-1">
               Competitor avg: #{performanceStats.competitorAverage}
@@ -219,7 +219,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden">
+        <div className="bg-slate-800 rounded-lg border-2 border-gray-200 overflow-hidden">
           <div className="flex border-b-2 border-gray-200">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -230,7 +230,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                   className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 font-semibold transition-colors ${
                     activeTab === tab.id
                       ? 'bg-purple-600 text-white'
-                      : 'bg-white text-gray-600 hover:bg-gray-50'
+                      : 'bg-slate-800 text-gray-300 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -246,7 +246,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Stage Name / Artist Name *
                     </label>
                     <input
@@ -258,7 +258,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Location
                     </label>
                     <div className="relative">
@@ -275,7 +275,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label className="block text-sm font-semibold text-gray-700">
+                    <label className="block text-sm font-semibold text-gray-200">
                       Tagline (Appears below your name) *
                     </label>
                     <button className="flex items-center gap-1 text-sm text-purple-600 hover:text-purple-700 font-semibold">
@@ -306,7 +306,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <label className="block text-sm font-semibold text-gray-700">
+                    <label className="block text-sm font-semibold text-gray-200">
                       Biography (Tell your story) *
                     </label>
                     <button className="flex items-center gap-1 text-sm text-purple-600 hover:text-purple-700 font-semibold">
@@ -327,7 +327,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Years of Experience
                     </label>
                     <input
@@ -338,7 +338,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Events Performed
                     </label>
                     <input
@@ -355,26 +355,26 @@ Specialising in weddings, I work closely with couples to create the perfect soun
             {activeTab === 'media' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Profile Photos</h3>
+                  <h3 className="text-lg font-bold text-white mb-4">Profile Photos</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-200 mb-2">
                         Profile Photo
                       </label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-purple-500 transition-colors cursor-pointer">
                         <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                        <div className="text-sm text-gray-600 mb-2">Click to upload or drag and drop</div>
+                        <div className="text-sm text-gray-300 mb-2">Click to upload or drag and drop</div>
                         <div className="text-xs text-gray-500">Square image, min 800x800px</div>
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label className="block text-sm font-semibold text-gray-200 mb-2">
                         Cover Photo
                       </label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-purple-500 transition-colors cursor-pointer">
                         <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                        <div className="text-sm text-gray-600 mb-2">Click to upload or drag and drop</div>
+                        <div className="text-sm text-gray-300 mb-2">Click to upload or drag and drop</div>
                         <div className="text-xs text-gray-500">Landscape, min 1920x600px</div>
                       </div>
                     </div>
@@ -383,7 +383,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-bold text-gray-900">Media Gallery</h3>
+                    <h3 className="text-lg font-bold text-white">Media Gallery</h3>
                     <Button size="sm">
                       <Plus className="w-4 h-4 mr-2" />
                       Add Media
@@ -407,10 +407,10 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                           <div className="text-white text-sm font-semibold">{item.caption}</div>
                         </div>
                         <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
-                          <button className="p-2 bg-white rounded-lg hover:bg-gray-100">
-                            <Edit2 className="w-4 h-4 text-gray-700" />
+                          <button className="p-2 bg-slate-800 rounded-lg hover:bg-gray-100">
+                            <Edit2 className="w-4 h-4 text-gray-200" />
                           </button>
-                          <button className="p-2 bg-white rounded-lg hover:bg-red-50">
+                          <button className="p-2 bg-slate-800 rounded-lg hover:bg-red-50">
                             <Trash2 className="w-4 h-4 text-red-600" />
                           </button>
                         </div>
@@ -420,7 +420,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-purple-500 transition-colors cursor-pointer">
                     <Upload className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <div className="text-lg font-semibold text-gray-700 mb-2">
+                    <div className="text-lg font-semibold text-gray-200 mb-2">
                       Upload Photos & Videos
                     </div>
                     <div className="text-sm text-gray-500 mb-4">
@@ -448,7 +448,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
             {activeTab === 'services' && (
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Genres / Music Styles
                   </label>
                   <div className="flex flex-wrap gap-2 mb-3">
@@ -472,7 +472,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Event Types You Perform At
                   </label>
                   <div className="flex flex-wrap gap-2 mb-3">
@@ -496,18 +496,18 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Equipment & What's Included
                   </label>
                   <div className="space-y-2 mb-3">
                     {profile.equipment.map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                        className="flex items-center justify-between p-3 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg"
                       >
                         <div className="flex items-center gap-3">
                           <Check className="w-5 h-5 text-green-600" />
-                          <span className="text-gray-900">{item}</span>
+                          <span className="text-white">{item}</span>
                         </div>
                         <button className="text-red-600 hover:text-red-700">
                           <Trash2 className="w-4 h-4" />
@@ -524,7 +524,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Starting Price (From)
                     </label>
                     <div className="relative">
@@ -541,7 +541,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-200 mb-2">
                       Average Booking Value
                     </label>
                     <div className="relative">
@@ -577,7 +577,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-gray-200 mb-2">
                     Search Keywords
                   </label>
                   <div className="flex flex-wrap gap-2 mb-3">
@@ -604,7 +604,7 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                       {['best dj london', 'wedding entertainment uk', 'professional party dj', 'dj hire near me'].map((keyword, index) => (
                         <button
                           key={index}
-                          className="px-3 py-1 bg-white border-2 border-green-300 text-green-700 rounded-full text-sm hover:bg-green-100 transition-colors"
+                          className="px-3 py-1 bg-slate-800 border-2 border-green-300 text-green-700 rounded-full text-sm hover:bg-green-100 transition-colors"
                         >
                           + {keyword}
                         </button>
@@ -614,35 +614,35 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
-                    <h4 className="font-bold text-gray-900 mb-4">Current Rankings</h4>
+                  <div className="bg-slate-800 border-2 border-gray-200 rounded-lg p-6">
+                    <h4 className="font-bold text-white mb-4">Current Rankings</h4>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-600">"wedding dj london"</div>
+                        <div className="text-sm text-gray-300">"wedding dj london"</div>
                         <div className="font-bold text-green-600">#3</div>
                       </div>
                       <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-600">"corporate event dj"</div>
+                        <div className="text-sm text-gray-300">"corporate event dj"</div>
                         <div className="font-bold text-yellow-600">#12</div>
                       </div>
                       <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-600">"party dj hire"</div>
+                        <div className="text-sm text-gray-300">"party dj hire"</div>
                         <div className="font-bold text-green-600">#5</div>
                       </div>
                       <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-600">"professional dj"</div>
+                        <div className="text-sm text-gray-300">"professional dj"</div>
                         <div className="font-bold text-red-600">#28</div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
-                    <h4 className="font-bold text-gray-900 mb-4">Visibility Metrics</h4>
+                  <div className="bg-slate-800 border-2 border-gray-200 rounded-lg p-6">
+                    <h4 className="font-bold text-white mb-4">Visibility Metrics</h4>
                     <div className="space-y-4">
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <div className="text-sm text-gray-600">Profile Completeness</div>
-                          <div className="font-bold text-gray-900">92%</div>
+                          <div className="text-sm text-gray-300">Profile Completeness</div>
+                          <div className="font-bold text-white">92%</div>
                         </div>
                         <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div className="h-full bg-gradient-to-r from-green-500 to-green-600" style={{ width: '92%' }}></div>
@@ -650,8 +650,8 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                       </div>
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <div className="text-sm text-gray-600">Keyword Optimization</div>
-                          <div className="font-bold text-gray-900">85%</div>
+                          <div className="text-sm text-gray-300">Keyword Optimization</div>
+                          <div className="font-bold text-white">85%</div>
                         </div>
                         <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div className="h-full bg-gradient-to-r from-yellow-500 to-yellow-600" style={{ width: '85%' }}></div>
@@ -659,8 +659,8 @@ Specialising in weddings, I work closely with couples to create the perfect soun
                       </div>
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <div className="text-sm text-gray-600">Media Quality</div>
-                          <div className="font-bold text-gray-900">78%</div>
+                          <div className="text-sm text-gray-300">Media Quality</div>
+                          <div className="font-bold text-white">78%</div>
                         </div>
                         <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div className="h-full bg-gradient-to-r from-orange-500 to-orange-600" style={{ width: '78%' }}></div>
@@ -675,9 +675,9 @@ Specialising in weddings, I work closely with couples to create the perfect soun
         </div>
 
         {/* Save Banner */}
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 p-4 shadow-lg">
+        <div className="fixed bottom-0 left-0 right-0 bg-slate-800 border-t-2 border-gray-200 p-4 shadow-lg">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-300">
               You have unsaved changes
             </div>
             <div className="flex gap-3">

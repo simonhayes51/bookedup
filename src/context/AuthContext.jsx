@@ -72,6 +72,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const demoLogin = async (type = 'performer') => {
+    try {
+      const response = await authService.demoLogin(type);
+      setUser(response.user);
+      setIsAuthenticated(true);
+      toast.success(`Welcome to the demo, ${response.user.firstName}!`);
+      return response;
+    } catch (error) {
+      toast.error('Demo login failed');
+      throw error;
+    }
+  };
+
   const logout = async () => {
     try {
       await authService.logout();
@@ -115,6 +128,7 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated,
     register,
     login,
+    demoLogin,
     logout,
     updateProfile,
     updatePassword,

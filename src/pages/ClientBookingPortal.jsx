@@ -170,7 +170,7 @@ const ClientBookingPortal = () => {
     const badges = {
       high: { bg: 'bg-red-100', text: 'text-red-700', border: 'border-red-300', icon: Zap },
       medium: { bg: 'bg-yellow-100', text: 'text-yellow-700', border: 'border-yellow-300', icon: AlertCircle },
-      low: { bg: 'bg-gray-100', text: 'text-gray-700', border: 'border-gray-300', icon: Clock }
+      low: { bg: 'bg-gray-100', text: 'text-gray-200', border: 'border-gray-300', icon: Clock }
     };
     const badge = badges[priority];
     const Icon = badge.icon;
@@ -183,47 +183,47 @@ const ClientBookingPortal = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Client Booking Portal</h1>
-          <p className="text-gray-600">Manage bookings, communicate with clients, and get paid</p>
+          <p className="text-gray-300">Manage bookings, communicate with clients, and get paid</p>
         </div>
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Active</div>
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Active</div>
             <div className="text-3xl font-bold text-green-600">{stats.activeBookings}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Pending</div>
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Pending</div>
             <div className="text-3xl font-bold text-yellow-600">{stats.pendingRequests}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Completed</div>
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Completed</div>
             <div className="text-3xl font-bold text-blue-600">{stats.completedBookings}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Revenue</div>
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Revenue</div>
             <div className="text-2xl font-bold text-purple-600">£{stats.totalRevenue.toLocaleString()}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="text-gray-600 text-sm mb-1">Upcoming</div>
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="text-gray-300 text-sm mb-1">Upcoming</div>
             <div className="text-2xl font-bold text-green-600">£{stats.upcomingPayments.toLocaleString()}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
-            <div className="flex items-center gap-1 text-gray-600 text-sm mb-1">
+          <div className="bg-slate-800 rounded-lg p-4 border-2 border-gray-200">
+            <div className="flex items-center gap-1 text-gray-300 text-sm mb-1">
               <Star className="w-4 h-4 text-yellow-500 fill-current" />
               Rating
             </div>
-            <div className="text-3xl font-bold text-gray-900">{stats.avgRating}</div>
+            <div className="text-3xl font-bold text-white">{stats.avgRating}</div>
           </div>
         </div>
 
@@ -241,25 +241,25 @@ const ClientBookingPortal = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
+              <button className="bg-slate-800/10 hover:bg-slate-800/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
                 <Send className="w-6 h-6 mb-2" />
                 <div className="font-semibold">Send Payment Link</div>
                 <div className="text-xs text-purple-100">Request outstanding balances</div>
               </button>
 
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
+              <button className="bg-slate-800/10 hover:bg-slate-800/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
                 <FileText className="w-6 h-6 mb-2" />
                 <div className="font-semibold">Generate Contract</div>
                 <div className="text-xs text-purple-100">Create booking agreement</div>
               </button>
 
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
+              <button className="bg-slate-800/10 hover:bg-slate-800/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
                 <MessageSquare className="w-6 h-6 mb-2" />
                 <div className="font-semibold">Message Client</div>
                 <div className="text-xs text-purple-100">Quick communication</div>
               </button>
 
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
+              <button className="bg-slate-800/10 hover:bg-slate-800/20 backdrop-blur-sm rounded-lg p-4 text-left transition-colors">
                 <Download className="w-6 h-6 mb-2" />
                 <div className="font-semibold">Export Invoices</div>
                 <div className="text-xs text-purple-100">Download for accounting</div>
@@ -269,7 +269,7 @@ const ClientBookingPortal = () => {
         )}
 
         {/* Tabs */}
-        <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden mb-8">
+        <div className="bg-slate-800 rounded-lg border-2 border-gray-200 overflow-hidden mb-8">
           <div className="flex border-b-2 border-gray-200 overflow-x-auto">
             {tabs.map((tab) => (
               <button
@@ -278,14 +278,14 @@ const ClientBookingPortal = () => {
                 className={`flex items-center gap-2 px-6 py-4 font-semibold whitespace-nowrap transition-colors ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                    : 'bg-slate-800 text-gray-300 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
                 }`}
               >
                 {tab.name}
                 <span className={`px-2 py-0.5 rounded-full text-xs ${
                   selectedTab === tab.id
-                    ? 'bg-white/20 text-white'
-                    : 'bg-gray-200 text-gray-700'
+                    ? 'bg-slate-800/20 text-white'
+                    : 'bg-gray-200 text-gray-200'
                 }`}>
                   {tab.count}
                 </span>
@@ -306,10 +306,10 @@ const ClientBookingPortal = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-xl font-bold text-gray-900">{booking.eventType}</h3>
+                          <h3 className="text-xl font-bold text-white">{booking.eventType}</h3>
                           {getStatusBadge(booking.status)}
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <span className="font-semibold">Ref: {booking.bookingRef}</span>
                           <span>•</span>
                           <span>{booking.clientName}</span>
@@ -327,7 +327,7 @@ const ClientBookingPortal = () => {
                         <Calendar className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Event Date</div>
-                          <div className="font-semibold text-gray-900">
+                          <div className="font-semibold text-white">
                             {new Date(booking.eventDate).toLocaleDateString('en-GB', {
                               weekday: 'short',
                               day: 'numeric',
@@ -342,7 +342,7 @@ const ClientBookingPortal = () => {
                         <Clock className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Time</div>
-                          <div className="font-semibold text-gray-900">{booking.eventTime}</div>
+                          <div className="font-semibold text-white">{booking.eventTime}</div>
                         </div>
                       </div>
 
@@ -350,7 +350,7 @@ const ClientBookingPortal = () => {
                         <MapPin className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Location</div>
-                          <div className="font-semibold text-gray-900">{booking.location}</div>
+                          <div className="font-semibold text-white">{booking.location}</div>
                         </div>
                       </div>
 
@@ -358,25 +358,25 @@ const ClientBookingPortal = () => {
                         <Users className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Guests</div>
-                          <div className="font-semibold text-gray-900">{booking.guests} people</div>
+                          <div className="font-semibold text-white">{booking.guests} people</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Package & Add-ons */}
-                    <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                    <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg p-4 mb-4">
                       <div className="flex items-center gap-2 mb-3">
-                        <PackageIcon className="w-5 h-5 text-gray-700" />
-                        <div className="font-semibold text-gray-900">{booking.packageSelected}</div>
-                        <div className="text-gray-600">£{booking.packagePrice}</div>
+                        <PackageIcon className="w-5 h-5 text-gray-200" />
+                        <div className="font-semibold text-white">{booking.packageSelected}</div>
+                        <div className="text-gray-300">£{booking.packagePrice}</div>
                       </div>
                       {booking.addOns.length > 0 && (
                         <div className="space-y-1">
-                          <div className="text-xs text-gray-600 font-semibold">Add-ons:</div>
+                          <div className="text-xs text-gray-300 font-semibold">Add-ons:</div>
                           {booking.addOns.map((addon, index) => (
                             <div key={index} className="flex items-center justify-between text-sm">
-                              <div className="text-gray-700">+ {addon.name}</div>
-                              <div className="text-gray-600">£{addon.price}</div>
+                              <div className="text-gray-200">+ {addon.name}</div>
+                              <div className="text-gray-300">£{addon.price}</div>
                             </div>
                           ))}
                         </div>
@@ -454,13 +454,13 @@ const ClientBookingPortal = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-xl font-bold text-gray-900">{request.eventType}</h3>
+                          <h3 className="text-xl font-bold text-white">{request.eventType}</h3>
                           {getPriorityBadge(request.priority)}
                           <div className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
                             Lead Score: {request.leadScore}%
                           </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="flex items-center gap-2 text-sm text-gray-300">
                           <span className="font-semibold">Ref: {request.bookingRef}</span>
                           <span>•</span>
                           <span>{request.clientName}</span>
@@ -480,7 +480,7 @@ const ClientBookingPortal = () => {
                         <Calendar className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Requested Date</div>
-                          <div className="font-semibold text-gray-900">
+                          <div className="font-semibold text-white">
                             {new Date(request.eventDate).toLocaleDateString('en-GB', {
                               day: 'numeric',
                               month: 'short',
@@ -494,7 +494,7 @@ const ClientBookingPortal = () => {
                         <Clock className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Time</div>
-                          <div className="font-semibold text-gray-900">{request.eventTime}</div>
+                          <div className="font-semibold text-white">{request.eventTime}</div>
                         </div>
                       </div>
 
@@ -502,7 +502,7 @@ const ClientBookingPortal = () => {
                         <MapPin className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Location</div>
-                          <div className="font-semibold text-gray-900">{request.location}</div>
+                          <div className="font-semibold text-white">{request.location}</div>
                         </div>
                       </div>
 
@@ -510,13 +510,13 @@ const ClientBookingPortal = () => {
                         <Users className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs text-gray-500">Guests</div>
-                          <div className="font-semibold text-gray-900">{request.guests} people</div>
+                          <div className="font-semibold text-white">{request.guests} people</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Client Message */}
-                    <div className="bg-white border-2 border-gray-200 rounded-lg p-4 mb-4">
+                    <div className="bg-slate-800 border-2 border-gray-200 rounded-lg p-4 mb-4">
                       <div className="text-xs text-gray-500 font-semibold mb-2">Client Message:</div>
                       <p className="text-gray-800">{request.message}</p>
                     </div>
