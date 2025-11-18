@@ -125,19 +125,19 @@ const PerformerCalendar = () => {
       case 'confirmed': return 'bg-green-100 text-green-700 border-green-300';
       case 'pending': return 'bg-yellow-100 text-yellow-700 border-yellow-300';
       case 'tentative': return 'bg-blue-100 text-blue-700 border-blue-300';
-      default: return 'bg-gray-100 text-gray-700 border-gray-300';
+      default: return 'bg-gray-100 text-gray-200 border-gray-300';
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Calendar & Availability</h1>
-              <p className="text-gray-600">Manage your bookings and availability</p>
+              <h1 className="text-4xl font-bold text-white mb-2">Calendar & Availability</h1>
+              <p className="text-gray-300">Manage your bookings and availability</p>
             </div>
             <Button onClick={() => setShowAddModal(true)}>
               <Plus className="w-5 h-5 mr-2" />
@@ -152,7 +152,7 @@ const PerformerCalendar = () => {
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 view === 'month'
                   ? 'bg-purple-600 text-white'
-                  : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                  : 'bg-slate-800/10 text-gray-300 hover:bg-slate-800/20'
               }`}
             >
               Month
@@ -162,7 +162,7 @@ const PerformerCalendar = () => {
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 view === 'list'
                   ? 'bg-purple-600 text-white'
-                  : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                  : 'bg-slate-800/10 text-gray-300 hover:bg-slate-800/20'
               }`}
             >
               List
@@ -171,13 +171,13 @@ const PerformerCalendar = () => {
         </div>
 
         {view === 'month' ? (
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg shadow-lg overflow-hidden border-2 border-gray-200">
             {/* Calendar Header */}
             <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-6">
               <div className="flex items-center justify-between">
                 <button
                   onClick={previousMonth}
-                  className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+                  className="p-2 hover:bg-slate-800/20 rounded-lg transition-colors"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
@@ -186,7 +186,7 @@ const PerformerCalendar = () => {
                 </h2>
                 <button
                   onClick={nextMonth}
-                  className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+                  className="p-2 hover:bg-slate-800/20 rounded-lg transition-colors"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
@@ -198,7 +198,7 @@ const PerformerCalendar = () => {
               {dayNames.map((day) => (
                 <div
                   key={day}
-                  className="p-4 text-center text-sm font-semibold text-gray-600 bg-gray-50"
+                  className="p-4 text-center text-sm font-semibold text-gray-300 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
                 >
                   {day}
                 </div>
@@ -209,7 +209,7 @@ const PerformerCalendar = () => {
             <div className="grid grid-cols-7">
               {/* Empty cells for days before month starts */}
               {Array.from({ length: startingDayOfWeek }).map((_, index) => (
-                <div key={`empty-${index}`} className="p-4 border border-gray-100 bg-gray-50" />
+                <div key={`empty-${index}`} className="p-4 border border-gray-100 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
               ))}
 
               {/* Days of the month */}
@@ -223,17 +223,17 @@ const PerformerCalendar = () => {
                   <div
                     key={day}
                     className={`min-h-[120px] p-2 border border-gray-100 ${
-                      isToday ? 'bg-purple-50' : 'bg-white hover:bg-gray-50'
+                      isToday ? 'bg-purple-50' : 'bg-slate-800 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
                     } transition-colors relative`}
                   >
                     <div className={`text-sm font-semibold mb-1 ${
-                      isToday ? 'text-purple-600' : 'text-gray-700'
+                      isToday ? 'text-purple-600' : 'text-gray-200'
                     }`}>
                       {day}
                     </div>
 
                     {isBlocked && (
-                      <div className="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded">
+                      <div className="bg-gray-200 text-gray-300 text-xs px-2 py-1 rounded">
                         Blocked
                       </div>
                     )}
@@ -256,16 +256,16 @@ const PerformerCalendar = () => {
             {bookings
               .sort((a, b) => a.date - b.date)
               .map((booking) => (
-                <div key={booking.id} className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors">
+                <div key={booking.id} className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">{booking.title}</h3>
+                        <h3 className="text-xl font-bold text-white">{booking.title}</h3>
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(booking.status)}`}>
                           {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
                         </span>
                       </div>
-                      <div className="text-gray-600">{booking.client}</div>
+                      <div className="text-gray-300">{booking.client}</div>
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-purple-600">£{booking.value}</div>
@@ -276,15 +276,15 @@ const PerformerCalendar = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="flex items-center text-gray-700">
+                    <div className="flex items-center text-gray-200">
                       <CalendarIcon className="w-5 h-5 mr-2 text-purple-600" />
                       <span>{booking.date.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
+                    <div className="flex items-center text-gray-200">
                       <Clock className="w-5 h-5 mr-2 text-purple-600" />
                       <span>{booking.time}</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
+                    <div className="flex items-center text-gray-200">
                       <MapPin className="w-5 h-5 mr-2 text-purple-600" />
                       <span>{booking.location}</span>
                     </div>
@@ -294,7 +294,7 @@ const PerformerCalendar = () => {
                     <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
                       View Details
                     </button>
-                    <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                    <button className="px-4 py-2 bg-gray-100 text-gray-200 rounded-lg hover:bg-gray-200 transition-colors">
                       Message Client
                     </button>
                   </div>
@@ -305,20 +305,20 @@ const PerformerCalendar = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">This Month</div>
-                <div className="text-3xl font-bold text-gray-900">{bookings.length}</div>
+                <div className="text-gray-300 text-sm mb-1">This Month</div>
+                <div className="text-3xl font-bold text-white">{bookings.length}</div>
               </div>
               <CalendarIcon className="w-10 h-10 text-purple-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Confirmed</div>
+                <div className="text-gray-300 text-sm mb-1">Confirmed</div>
                 <div className="text-3xl font-bold text-green-600">
                   {bookings.filter(b => b.status === 'confirmed').length}
                 </div>
@@ -327,10 +327,10 @@ const PerformerCalendar = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Pending</div>
+                <div className="text-gray-300 text-sm mb-1">Pending</div>
                 <div className="text-3xl font-bold text-yellow-600">
                   {bookings.filter(b => b.status === 'pending').length}
                 </div>
@@ -339,10 +339,10 @@ const PerformerCalendar = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Total Value</div>
+                <div className="text-gray-300 text-sm mb-1">Total Value</div>
                 <div className="text-3xl font-bold text-purple-600">
                   £{bookings.reduce((sum, b) => sum + b.value, 0).toLocaleString()}
                 </div>
@@ -356,14 +356,14 @@ const PerformerCalendar = () => {
       {/* Add Booking Modal (placeholder) */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-2xl w-full p-8">
+          <div className="bg-slate-800 rounded-lg max-w-2xl w-full p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Add New Booking</h2>
-              <button onClick={() => setShowAddModal(false)} className="text-gray-500 hover:text-gray-700">
+              <h2 className="text-2xl font-bold text-white">Add New Booking</h2>
+              <button onClick={() => setShowAddModal(false)} className="text-gray-500 hover:text-gray-200">
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <p className="text-gray-600 mb-4">Booking form coming soon...</p>
+            <p className="text-gray-300 mb-4">Booking form coming soon...</p>
             <Button onClick={() => setShowAddModal(false)}>Close</Button>
           </div>
         </div>

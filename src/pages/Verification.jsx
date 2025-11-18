@@ -124,8 +124,8 @@ const Verification = () => {
     switch (status) {
       case 'verified': return 'bg-green-100 text-green-700 border-green-300';
       case 'pending': return 'bg-yellow-100 text-yellow-700 border-yellow-300';
-      case 'not_started': return 'bg-gray-100 text-gray-700 border-gray-300';
-      default: return 'bg-gray-100 text-gray-700 border-gray-300';
+      case 'not_started': return 'bg-gray-100 text-gray-200 border-gray-300';
+      default: return 'bg-gray-100 text-gray-200 border-gray-300';
     }
   };
 
@@ -146,15 +146,15 @@ const Verification = () => {
   const completionRate = Math.round((verificationCount / totalVerifications) * 100);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Shield className="w-10 h-10 text-purple-400" />
-            <h1 className="text-4xl font-bold text-gray-900">Verification & Badges</h1>
+            <h1 className="text-4xl font-bold text-white">Verification & Badges</h1>
           </div>
-          <p className="text-gray-600">Build trust and get more bookings with verified badges</p>
+          <p className="text-gray-300">Build trust and get more bookings with verified badges</p>
         </div>
 
         {/* Progress Overview */}
@@ -175,24 +175,24 @@ const Verification = () => {
               <span>Completion: {completionRate}%</span>
               <span>{verificationCount === totalVerifications ? 'All Done! 🎉' : `${totalVerifications - verificationCount} to go`}</span>
             </div>
-            <div className="h-4 bg-white/20 rounded-full overflow-hidden">
+            <div className="h-4 bg-slate-800/20 rounded-full overflow-hidden">
               <div
-                className="h-full bg-white rounded-full transition-all duration-500"
+                className="h-full bg-slate-800 rounded-full transition-all duration-500"
                 style={{ width: `${completionRate}%` }}
               />
             </div>
           </div>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="font-semibold mb-1">📈 Profile Boost</div>
               <div>Each badge increases your search ranking</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="font-semibold mb-1">💰 Higher Rates</div>
               <div>Verified performers charge 30% more on average</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-4">
               <div className="font-semibold mb-1">🎯 Better Clients</div>
               <div>Premium events require verified performers</div>
             </div>
@@ -211,18 +211,18 @@ const Verification = () => {
               return (
                 <div
                   key={badge.id}
-                  className={`bg-white rounded-lg border-2 overflow-hidden ${
+                  className={`bg-slate-800 rounded-lg border-2 overflow-hidden ${
                     isVerified ? 'border-green-400' : 'border-gray-200'
                   }`}
                 >
                   <div className={`bg-gradient-to-r ${getBadgeColor(badge.color)} p-6 text-white relative`}>
                     {isVerified && (
-                      <div className="absolute top-2 right-2 bg-white text-green-600 rounded-full p-1">
+                      <div className="absolute top-2 right-2 bg-slate-800 text-green-600 rounded-full p-1">
                         <Check className="w-5 h-5" />
                       </div>
                     )}
                     {badge.required && (
-                      <div className="absolute top-2 left-2 bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">
+                      <div className="absolute top-2 left-2 bg-slate-800/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">
                         Required
                       </div>
                     )}
@@ -231,7 +231,7 @@ const Verification = () => {
                   </div>
 
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{badge.description}</p>
+                    <p className="text-gray-200 mb-4">{badge.description}</p>
 
                     <div className={`text-sm px-3 py-2 rounded-lg mb-4 border-2 ${getStatusColor(verification.status)}`}>
                       <div className="font-semibold">
@@ -246,7 +246,7 @@ const Verification = () => {
                       <div className="text-sm text-green-600">{badge.benefit}</div>
                     </div>
 
-                    <div className="text-xs text-gray-600 mb-3">
+                    <div className="text-xs text-gray-300 mb-3">
                       <div className="font-semibold mb-1">Required Documents:</div>
                       <ul className="list-disc list-inside space-y-1">
                         {badge.documents.map((doc, index) => (
@@ -282,7 +282,7 @@ const Verification = () => {
               return (
                 <div
                   key={achievement.id}
-                  className={`bg-white rounded-lg p-6 border-2 ${
+                  className={`bg-slate-800 rounded-lg p-6 border-2 ${
                     achievement.unlocked ? 'border-yellow-400' : 'border-gray-200'
                   }`}
                 >
@@ -294,12 +294,12 @@ const Verification = () => {
                     <Icon className={`w-8 h-8 ${achievement.unlocked ? 'text-white' : 'text-gray-400'}`} />
                   </div>
 
-                  <h3 className="font-bold text-gray-900 mb-2">{achievement.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{achievement.description}</p>
+                  <h3 className="font-bold text-white mb-2">{achievement.name}</h3>
+                  <p className="text-sm text-gray-300 mb-4">{achievement.description}</p>
 
                   {!achievement.unlocked && (
                     <div>
-                      <div className="flex justify-between text-xs text-gray-600 mb-1">
+                      <div className="flex justify-between text-xs text-gray-300 mb-1">
                         <span>Progress</span>
                         <span>{achievement.progress}/{achievement.requirement}</span>
                       </div>

@@ -71,14 +71,14 @@ const PackageBuilder = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Package Builder</h1>
-              <p className="text-gray-600">Create pricing packages that sell</p>
+              <h1 className="text-4xl font-bold text-white mb-2">Package Builder</h1>
+              <p className="text-gray-300">Create pricing packages that sell</p>
             </div>
             <Button onClick={() => setShowAddPackage(true)}>
               <Plus className="w-5 h-5 mr-2" />
@@ -89,40 +89,40 @@ const PackageBuilder = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Active Packages</div>
-                <div className="text-3xl font-bold text-gray-900">{stats.totalPackages}</div>
+                <div className="text-gray-300 text-sm mb-1">Active Packages</div>
+                <div className="text-3xl font-bold text-white">{stats.totalPackages}</div>
               </div>
               <Package className="w-10 h-10 text-purple-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Average Price</div>
+                <div className="text-gray-300 text-sm mb-1">Average Price</div>
                 <div className="text-3xl font-bold text-purple-600">£{stats.avgPrice}</div>
               </div>
               <DollarSign className="w-10 h-10 text-purple-600" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Most Popular</div>
-                <div className="text-2xl font-bold text-gray-900">{stats.popularPackage}</div>
+                <div className="text-gray-300 text-sm mb-1">Most Popular</div>
+                <div className="text-2xl font-bold text-white">{stats.popularPackage}</div>
               </div>
               <Star className="w-10 h-10 text-yellow-500" />
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-gray-600 text-sm mb-1">Conversion Rate</div>
+                <div className="text-gray-300 text-sm mb-1">Conversion Rate</div>
                 <div className="text-3xl font-bold text-green-600">{stats.conversionRate}%</div>
               </div>
               <Zap className="w-10 h-10 text-green-600" />
@@ -137,7 +137,7 @@ const PackageBuilder = () => {
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`bg-white rounded-lg overflow-hidden border-2 ${
+                className={`bg-slate-800 rounded-lg overflow-hidden border-2 ${
                   pkg.popular ? 'border-purple-500 ring-4 ring-purple-200' : 'border-gray-200'
                 } hover:shadow-xl transition-all`}
               >
@@ -148,12 +148,12 @@ const PackageBuilder = () => {
                 )}
 
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
                   <div className="flex items-baseline mb-4">
                     <span className="text-4xl font-bold text-purple-600">£{pkg.price}</span>
                     <span className="text-gray-500 ml-2">/ {pkg.duration}</span>
                   </div>
-                  <p className="text-gray-600 mb-6">{pkg.description}</p>
+                  <p className="text-gray-300 mb-6">{pkg.description}</p>
 
                   <div className="space-y-3 mb-6">
                     {pkg.features.map((feature, index) => (
@@ -161,7 +161,7 @@ const PackageBuilder = () => {
                         <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                        <span className="text-gray-200 text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -200,19 +200,19 @@ const PackageBuilder = () => {
             {addOns.map((addon) => (
               <div
                 key={addon.id}
-                className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors"
+                className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">{addon.name}</h3>
-                    <p className="text-gray-600 text-sm mb-3">{addon.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-1">{addon.name}</h3>
+                    <p className="text-gray-300 text-sm mb-3">{addon.description}</p>
                     <div className="text-2xl font-bold text-purple-600">+£{addon.price}</div>
                   </div>
                   <div className="flex gap-2">
-                    <button className="p-2 text-gray-600 hover:text-purple-600 transition-colors">
+                    <button className="p-2 text-gray-300 hover:text-purple-600 transition-colors">
                       <Edit2 className="w-5 h-5" />
                     </button>
-                    <button className="p-2 text-gray-600 hover:text-red-600 transition-colors">
+                    <button className="p-2 text-gray-300 hover:text-red-600 transition-colors">
                       <Trash2 className="w-5 h-5" />
                     </button>
                   </div>

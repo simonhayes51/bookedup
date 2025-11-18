@@ -100,14 +100,14 @@ const FinancialDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-4xl font-bold text-white mb-2">Financial Dashboard</h1>
-              <p className="text-gray-600">Track income, expenses, and tax obligations</p>
+              <p className="text-gray-300">Track income, expenses, and tax obligations</p>
             </div>
             <div className="flex gap-3">
               <Button variant="secondary">
@@ -117,7 +117,7 @@ const FinancialDashboard = () => {
               <select
                 value={timeRange}
                 onChange={(e) => setTimeRange(e.target.value)}
-                className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg font-medium"
+                className="px-4 py-2 bg-slate-800 border-2 border-gray-200 rounded-lg font-medium"
               >
                 <option value="week">This Week</option>
                 <option value="month">This Month</option>
@@ -130,10 +130,10 @@ const FinancialDashboard = () => {
 
         {/* Financial Overview Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <div className="text-gray-600 text-sm mb-1">Total Income</div>
+                <div className="text-gray-300 text-sm mb-1">Total Income</div>
                 <div className="text-3xl font-bold text-green-600">
                   {formatCurrency(financials.totalIncome)}
                 </div>
@@ -146,10 +146,10 @@ const FinancialDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <div className="text-gray-600 text-sm mb-1">Total Expenses</div>
+                <div className="text-gray-300 text-sm mb-1">Total Expenses</div>
                 <div className="text-3xl font-bold text-red-600">
                   {formatCurrency(financials.totalExpenses)}
                 </div>
@@ -177,10 +177,10 @@ const FinancialDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-yellow-300">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-300">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <div className="text-gray-600 text-sm mb-1">Tax Estimate (30%)</div>
+                <div className="text-gray-300 text-sm mb-1">Tax Estimate (30%)</div>
                 <div className="text-3xl font-bold text-yellow-600">
                   {formatCurrency(financials.taxEstimate)}
                 </div>
@@ -196,9 +196,9 @@ const FinancialDashboard = () => {
         {/* Income & Expense Breakdown */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Income Breakdown */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">Income Breakdown</h2>
+              <h2 className="text-xl font-bold text-white">Income Breakdown</h2>
               <Button size="sm" onClick={() => setShowAddIncome(true)}>
                 <Plus className="w-4 h-4 mr-2" />
                 Add Income
@@ -210,11 +210,11 @@ const FinancialDashboard = () => {
                 <div key={index}>
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <div className="font-semibold text-gray-900">{stream.category}</div>
+                      <div className="font-semibold text-white">{stream.category}</div>
                       <div className="text-sm text-gray-500">{stream.count} transactions</div>
                     </div>
                     <div className="text-right">
-                      <div className="font-bold text-gray-900">{formatCurrency(stream.amount)}</div>
+                      <div className="font-bold text-white">{formatCurrency(stream.amount)}</div>
                       <div className="text-sm text-gray-500">{stream.percentage}%</div>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ const FinancialDashboard = () => {
 
             <div className="mt-6 pt-6 border-t-2 border-gray-200">
               <div className="flex items-center justify-between">
-                <div className="font-bold text-gray-900">Total Income</div>
+                <div className="font-bold text-white">Total Income</div>
                 <div className="text-2xl font-bold text-green-600">
                   {formatCurrency(financials.totalIncome)}
                 </div>
@@ -239,9 +239,9 @@ const FinancialDashboard = () => {
           </div>
 
           {/* Expense Breakdown */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">Expense Breakdown</h2>
+              <h2 className="text-xl font-bold text-white">Expense Breakdown</h2>
               <Button size="sm" onClick={() => setShowAddExpense(true)}>
                 <Plus className="w-4 h-4 mr-2" />
                 Add Expense
@@ -252,9 +252,9 @@ const FinancialDashboard = () => {
               {expenseCategories.map((category, index) => (
                 <div key={index}>
                   <div className="flex items-center justify-between mb-2">
-                    <div className="font-semibold text-gray-900">{category.category}</div>
+                    <div className="font-semibold text-white">{category.category}</div>
                     <div className="text-right">
-                      <div className="font-bold text-gray-900">{formatCurrency(category.amount)}</div>
+                      <div className="font-bold text-white">{formatCurrency(category.amount)}</div>
                       <div className="text-sm text-gray-500">{category.percentage}%</div>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ const FinancialDashboard = () => {
 
             <div className="mt-6 pt-6 border-t-2 border-gray-200">
               <div className="flex items-center justify-between">
-                <div className="font-bold text-gray-900">Total Expenses</div>
+                <div className="font-bold text-white">Total Expenses</div>
                 <div className="text-2xl font-bold text-red-600">
                   {formatCurrency(financials.totalExpenses)}
                 </div>
@@ -280,13 +280,13 @@ const FinancialDashboard = () => {
         </div>
 
         {/* Monthly Trends Chart */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">6-Month Trend</h2>
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-8">
+          <h2 className="text-xl font-bold text-white mb-6">6-Month Trend</h2>
 
           <div className="space-y-6">
             {/* Income bars */}
             <div>
-              <div className="text-sm font-semibold text-gray-700 mb-3">Income</div>
+              <div className="text-sm font-semibold text-gray-200 mb-3">Income</div>
               <div className="flex items-end gap-2 h-32">
                 {monthlyTrends.map((month, index) => (
                   <div key={index} className="flex-1 flex flex-col items-center">
@@ -295,12 +295,12 @@ const FinancialDashboard = () => {
                         className="absolute bottom-0 w-full bg-gradient-to-t from-green-600 to-green-400 rounded-t transition-all"
                         style={{ height: `${(month.income / maxValue) * 100}%` }}
                       >
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-700 whitespace-nowrap">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-200 whitespace-nowrap">
                           {formatCurrency(month.income)}
                         </div>
                       </div>
                     </div>
-                    <div className="text-xs font-semibold text-gray-600 mt-2">{month.month}</div>
+                    <div className="text-xs font-semibold text-gray-300 mt-2">{month.month}</div>
                   </div>
                 ))}
               </div>
@@ -308,7 +308,7 @@ const FinancialDashboard = () => {
 
             {/* Expense bars */}
             <div>
-              <div className="text-sm font-semibold text-gray-700 mb-3">Expenses</div>
+              <div className="text-sm font-semibold text-gray-200 mb-3">Expenses</div>
               <div className="flex items-end gap-2 h-24">
                 {monthlyTrends.map((month, index) => (
                   <div key={index} className="flex-1 flex flex-col items-center">
@@ -317,12 +317,12 @@ const FinancialDashboard = () => {
                         className="absolute bottom-0 w-full bg-gradient-to-t from-red-600 to-red-400 rounded-t transition-all"
                         style={{ height: `${(month.expenses / maxValue) * 100}%` }}
                       >
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-700 whitespace-nowrap">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-200 whitespace-nowrap">
                           {formatCurrency(month.expenses)}
                         </div>
                       </div>
                     </div>
-                    <div className="text-xs font-semibold text-gray-600 mt-2">{month.month}</div>
+                    <div className="text-xs font-semibold text-gray-300 mt-2">{month.month}</div>
                   </div>
                 ))}
               </div>
@@ -330,7 +330,7 @@ const FinancialDashboard = () => {
 
             {/* Profit bars */}
             <div>
-              <div className="text-sm font-semibold text-gray-700 mb-3">Net Profit</div>
+              <div className="text-sm font-semibold text-gray-200 mb-3">Net Profit</div>
               <div className="flex items-end gap-2 h-32">
                 {monthlyTrends.map((month, index) => (
                   <div key={index} className="flex-1 flex flex-col items-center">
@@ -339,12 +339,12 @@ const FinancialDashboard = () => {
                         className="absolute bottom-0 w-full bg-gradient-to-t from-purple-600 to-purple-400 rounded-t transition-all"
                         style={{ height: `${(month.profit / maxValue) * 100}%` }}
                       >
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-700 whitespace-nowrap">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-semibold text-gray-200 whitespace-nowrap">
                           {formatCurrency(month.profit)}
                         </div>
                       </div>
                     </div>
-                    <div className="text-xs font-semibold text-gray-600 mt-2">{month.month}</div>
+                    <div className="text-xs font-semibold text-gray-300 mt-2">{month.month}</div>
                   </div>
                 ))}
               </div>
@@ -354,16 +354,16 @@ const FinancialDashboard = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Recent Income */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Income</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">Recent Income</h2>
             <div className="space-y-3">
               {recentIncome.map((income) => (
                 <div
                   key={income.id}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center justify-between p-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <div className="flex-1">
-                    <div className="font-semibold text-gray-900">{income.client}</div>
+                    <div className="font-semibold text-white">{income.client}</div>
                     <div className="text-sm text-gray-500">{income.date}</div>
                   </div>
                   <div className="text-right">
@@ -378,17 +378,17 @@ const FinancialDashboard = () => {
           </div>
 
           {/* Recent Expenses */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Expenses</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">Recent Expenses</h2>
             <div className="space-y-3">
               {recentExpenses.map((expense) => (
                 <div
                   key={expense.id}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center justify-between p-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <div className="font-semibold text-gray-900">{expense.description}</div>
+                      <div className="font-semibold text-white">{expense.description}</div>
                       {expense.receipt && (
                         <Receipt className="w-4 h-4 text-green-600" />
                       )}
@@ -403,10 +403,10 @@ const FinancialDashboard = () => {
         </div>
 
         {/* Tax Payment Schedule */}
-        <div className="bg-white rounded-lg p-6 border-2 border-yellow-300 mb-8">
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-300 mb-8">
           <div className="flex items-center gap-3 mb-6">
             <AlertCircle className="w-6 h-6 text-yellow-600" />
-            <h2 className="text-xl font-bold text-gray-900">Quarterly Tax Payment Schedule</h2>
+            <h2 className="text-xl font-bold text-white">Quarterly Tax Payment Schedule</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -420,17 +420,17 @@ const FinancialDashboard = () => {
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <div className="font-bold text-gray-900">{payment.quarter}</div>
+                  <div className="font-bold text-white">{payment.quarter}</div>
                   {payment.paid ? (
                     <CheckCircle className="w-5 h-5 text-green-600" />
                   ) : (
                     <Clock className="w-5 h-5 text-yellow-600" />
                   )}
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">
+                <div className="text-2xl font-bold text-white mb-1">
                   {formatCurrency(payment.estimated)}
                 </div>
-                <div className="text-sm text-gray-600">Due: {payment.dueDate}</div>
+                <div className="text-sm text-gray-300">Due: {payment.dueDate}</div>
               </div>
             ))}
           </div>

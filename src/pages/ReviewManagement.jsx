@@ -150,7 +150,7 @@ const ReviewManagement = () => {
           <Star
             key={star}
             className={`w-5 h-5 ${
-              star <= rating ? getStarColor(rating) + ' fill-current' : 'text-gray-600'
+              star <= rating ? getStarColor(rating) + ' fill-current' : 'text-gray-300'
             }`}
           />
         ))}
@@ -164,14 +164,14 @@ const ReviewManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-4xl font-bold text-white mb-2">Review Management</h1>
-              <p className="text-gray-600">Build trust and showcase social proof</p>
+              <p className="text-gray-300">Build trust and showcase social proof</p>
             </div>
             <div className="flex gap-3">
               <Button variant="secondary">
@@ -218,14 +218,14 @@ const ReviewManagement = () => {
         </div>
 
         {/* Rating Distribution */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Rating Breakdown</h2>
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-8">
+          <h2 className="text-xl font-bold text-white mb-6">Rating Breakdown</h2>
 
           <div className="space-y-3">
             {distribution.map((item) => (
               <div key={item.stars} className="flex items-center gap-4">
                 <div className="flex items-center gap-1 w-20">
-                  <span className="font-semibold text-gray-700">{item.stars}</span>
+                  <span className="font-semibold text-gray-200">{item.stars}</span>
                   <Star className="w-4 h-4 text-yellow-500 fill-current" />
                 </div>
 
@@ -239,7 +239,7 @@ const ReviewManagement = () => {
                 </div>
 
                 <div className="w-16 text-right">
-                  <span className="font-semibold text-gray-900">{item.count}</span>
+                  <span className="font-semibold text-white">{item.count}</span>
                   <span className="text-gray-500 text-sm ml-1">({item.percentage}%)</span>
                 </div>
               </div>
@@ -258,11 +258,11 @@ const ReviewManagement = () => {
         </div>
 
         {/* Featured Testimonials */}
-        <div className="bg-white rounded-lg p-6 border-2 border-yellow-300 mb-8">
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-yellow-300 mb-8">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <Award className="w-6 h-6 text-yellow-600" />
-              <h2 className="text-xl font-bold text-gray-900">Featured Testimonials</h2>
+              <h2 className="text-xl font-bold text-white">Featured Testimonials</h2>
             </div>
             <Button size="sm">
               <Share2 className="w-4 h-4 mr-2" />
@@ -280,7 +280,7 @@ const ReviewManagement = () => {
                 <p className="text-gray-800 text-sm mb-3 line-clamp-3">"{review.comment}"</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="font-semibold text-gray-900 text-sm">{review.client}</div>
+                    <div className="font-semibold text-white text-sm">{review.client}</div>
                     <div className="text-xs text-gray-500">{review.event}</div>
                   </div>
                   <button className="text-purple-600 hover:text-purple-700 text-xs font-semibold">
@@ -303,7 +303,7 @@ const ReviewManagement = () => {
         </div>
 
         {/* Filters & Search */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-6">
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -344,7 +344,7 @@ const ReviewManagement = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className={`bg-white rounded-lg p-6 border-2 ${
+              className={`bg-slate-800 rounded-lg p-6 border-2 ${
                 review.featured
                   ? 'border-yellow-300'
                   : review.response
@@ -357,7 +357,7 @@ const ReviewManagement = () => {
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="font-bold text-gray-900">{review.client}</div>
+                      <div className="font-bold text-white">{review.client}</div>
                       {review.verified && (
                         <div className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full font-semibold">
                           ✓ Verified

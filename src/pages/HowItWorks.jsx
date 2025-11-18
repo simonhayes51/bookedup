@@ -78,33 +78,33 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-800">
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             Simple & Secure
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             How BookedUp Works
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             We make booking entertainment simple, secure, and stress-free for everyone
           </p>
         </div>
       </section>
 
       {/* For Clients */}
-      <section className="section bg-white">
+      <section className="section bg-slate-800">
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               For Event Organizers
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Book perfect entertainment in 4 steps
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               From discovery to celebration, we've got you covered
             </p>
           </div>
@@ -119,17 +119,17 @@ const HowItWorks = () => {
                   <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold mb-4">
                     STEP {index + 1}
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-3xl font-bold text-white mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6">
+                  <p className="text-lg text-gray-300 mb-6">
                     {step.description}
                   </p>
                   <ul className="space-y-3">
                     {step.details.map((detail, i) => (
                       <li key={i} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{detail}</span>
+                        <span className="text-gray-200">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -164,10 +164,10 @@ const HowItWorks = () => {
             <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               For Performers
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Grow your performance business
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Get more bookings and manage your business in one place
             </p>
           </div>
@@ -181,10 +181,10 @@ const HowItWorks = () => {
                 <div className="inline-flex items-center justify-center w-8 h-8 bg-purple-100 text-purple-700 rounded-full text-sm font-bold mb-4">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-300">
                   {item.description}
                 </p>
               </div>
@@ -203,17 +203,17 @@ const HowItWorks = () => {
       </section>
 
       {/* Safety & Security */}
-      <section className="section bg-white">
+      <section className="section bg-slate-800">
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <Shield className="w-4 h-4" />
               Safe & Secure
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Your safety is our priority
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Book with confidence knowing you're protected
             </p>
           </div>
@@ -221,30 +221,30 @@ const HowItWorks = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card-elevated text-center p-8">
               <div className="text-6xl mb-6">🔒</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-white mb-3">
                 Secure Payments
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 All payments are processed securely. Your financial information is never shared.
               </p>
             </div>
 
             <div className="card-elevated text-center p-8">
               <div className="text-6xl mb-6">✓</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-white mb-3">
                 Verified Performers
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 All performers go through our verification process to ensure quality and safety.
               </p>
             </div>
 
             <div className="card-elevated text-center p-8">
               <div className="text-6xl mb-6">💬</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-white mb-3">
                 24/7 Support
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 Our support team is here to help if you need assistance at any time.
               </p>
             </div>
@@ -264,12 +264,12 @@ const HowItWorks = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/performers">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-base font-semibold shadow-xl">
+                <Button size="lg" className="bg-slate-800 text-purple-600 hover:bg-gray-100 px-8 py-4 text-base font-semibold shadow-xl">
                   Find Performers
                 </Button>
               </Link>
               <Link to="/register">
-                <Button size="lg" className="bg-white/10 text-white hover:bg-white/20 border-2 border-white/20 px-8 py-4 text-base font-semibold backdrop-blur-sm">
+                <Button size="lg" className="bg-slate-800/10 text-white hover:bg-slate-800/20 border-2 border-white/20 px-8 py-4 text-base font-semibold backdrop-blur-sm">
                   Sign Up Free
                 </Button>
               </Link>

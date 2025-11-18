@@ -127,12 +127,12 @@ const Performers = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Find Performers</h1>
-          <p className="mt-2 text-gray-600">
+          <h1 className="text-3xl font-bold text-white">Find Performers</h1>
+          <p className="mt-2 text-gray-300">
             Discover talented artists for your next event
           </p>
         </div>
@@ -212,7 +212,7 @@ const Performers = () => {
                     onChange={(e) => handleFilterChange('verified', e.target.checked)}
                     className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
                   />
-                  <span className="ml-2 text-sm text-gray-700">Verified only</span>
+                  <span className="ml-2 text-sm text-gray-200">Verified only</span>
                 </label>
 
                 <label className="flex items-center">
@@ -222,7 +222,7 @@ const Performers = () => {
                     onChange={(e) => handleFilterChange('premium', e.target.checked)}
                     className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
                   />
-                  <span className="ml-2 text-sm text-gray-700">Premium only</span>
+                  <span className="ml-2 text-sm text-gray-200">Premium only</span>
                 </label>
 
                 <button
@@ -255,7 +255,7 @@ const Performers = () => {
         ) : (
           <>
             {/* Count */}
-            <div className="mb-4 text-sm text-gray-600">
+            <div className="mb-4 text-sm text-gray-300">
               Found {performers.length} performer{performers.length !== 1 ? 's' : ''}
             </div>
 
@@ -274,7 +274,7 @@ const Performers = () => {
                       {performer.premium && (
                         <Badge
                           variant="warning"
-                          className="absolute top-2 right-2 bg-yellow-400 text-gray-900"
+                          className="absolute top-2 right-2 bg-yellow-400 text-white"
                         >
                           <TrendingUp className="w-3 h-3 mr-1" />
                           Premium
@@ -292,7 +292,7 @@ const Performers = () => {
                   <div className="p-4">
                     <div className="flex items-start justify-between mb-2">
                       <Link to={`/performers/${performer.id}`}>
-                        <h3 className="font-semibold text-lg text-gray-900 hover:text-red-600">
+                        <h3 className="font-semibold text-lg text-white hover:text-red-600">
                           {performer.stageName}
                         </h3>
                       </Link>
@@ -312,32 +312,32 @@ const Performers = () => {
                       {performer.genre}
                     </Badge>
 
-                    <div className="flex items-center text-sm text-gray-600 mb-2">
+                    <div className="flex items-center text-sm text-gray-300 mb-2">
                       <MapPin className="w-4 h-4 mr-1" />
                       {performer.location}
                     </div>
 
                     <div className="flex items-center mb-3">
                       <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <span className="ml-1 text-sm font-medium text-gray-900">
+                      <span className="ml-1 text-sm font-medium text-white">
                         {performer.rating || 0}
                       </span>
-                      <span className="ml-1 text-sm text-gray-600">
+                      <span className="ml-1 text-sm text-gray-300">
                         ({performer.totalReviews || 0} reviews)
                       </span>
                     </div>
 
                     <div className="flex items-baseline justify-between">
                       <div>
-                        <span className="text-2xl font-bold text-gray-900">
+                        <span className="text-2xl font-bold text-white">
                           £{performer.priceMin}
                         </span>
                         {performer.priceMax && performer.priceMax !== performer.priceMin && (
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-gray-300">
                             {' '}- £{performer.priceMax}
                           </span>
                         )}
-                        <span className="text-sm text-gray-600 ml-1">
+                        <span className="text-sm text-gray-300 ml-1">
                           /{performer.priceUnit || 'event'}
                         </span>
                       </div>
@@ -372,7 +372,7 @@ const Performers = () => {
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                         page === pagination.page
                           ? 'bg-red-600 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                          : 'bg-slate-800 text-gray-200 hover:bg-gray-100'
                       }`}
                     >
                       {page}

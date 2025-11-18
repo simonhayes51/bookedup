@@ -71,14 +71,14 @@ const Analytics = () => {
   }, [timeRange]);
 
   const StatCard = ({ icon: Icon, label, value, change, trend, prefix = '', suffix = '' }) => (
-    <div className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors">
+    <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <div className="flex items-center text-gray-600 text-sm font-medium mb-2">
+          <div className="flex items-center text-gray-300 text-sm font-medium mb-2">
             <Icon className="w-4 h-4 mr-2" />
             {label}
           </div>
-          <div className="text-3xl font-bold text-gray-900">
+          <div className="text-3xl font-bold text-white">
             {prefix}{typeof value === 'number' ? value.toLocaleString() : value}{suffix}
           </div>
           <div className={`flex items-center mt-2 text-sm ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
@@ -96,19 +96,19 @@ const Analytics = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-900 text-xl">Loading your analytics...</div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading your analytics...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Analytics Dashboard</h1>
-          <p className="text-gray-600">Track your performance and grow your business</p>
+          <h1 className="text-4xl font-bold text-white mb-2">Analytics Dashboard</h1>
+          <p className="text-gray-300">Track your performance and grow your business</p>
         </div>
 
         {/* Time Range Selector */}
@@ -120,7 +120,7 @@ const Analytics = () => {
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                 timeRange === range
                   ? 'bg-purple-600 text-white'
-                  : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                  : 'bg-slate-800/10 text-gray-300 hover:bg-slate-800/20'
               }`}
             >
               {range === '7days' ? '7 Days' : range === '30days' ? '30 Days' : range === '90days' ? '90 Days' : '1 Year'}
@@ -145,8 +145,8 @@ const Analytics = () => {
         </div>
 
         {/* Performance Chart */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Performance Trends</h2>
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-8">
+          <h2 className="text-xl font-bold text-white mb-6">Performance Trends</h2>
           <div className="h-64 flex items-end justify-between gap-2">
             {chartData.profileViews.map((value, index) => (
               <div key={index} className="flex-1 flex flex-col items-center gap-2">
@@ -165,18 +165,18 @@ const Analytics = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Top Performing Content */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Top Performing Content</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">Top Performing Content</h2>
             <div className="space-y-4">
               {topPerformingContent.map((content, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div key={index} className="flex items-center gap-4 p-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="text-4xl">{content.thumbnail}</div>
                   <div className="flex-1">
-                    <div className="font-semibold text-gray-900">{content.title}</div>
-                    <div className="text-sm text-gray-600">{content.type}</div>
+                    <div className="font-semibold text-white">{content.title}</div>
+                    <div className="text-sm text-gray-300">{content.type}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-semibold text-gray-900">{content.views} views</div>
+                    <div className="text-sm font-semibold text-white">{content.views} views</div>
                     <div className="text-sm text-green-600">{content.enquiries} enquiries</div>
                   </div>
                 </div>
@@ -185,22 +185,22 @@ const Analytics = () => {
           </div>
 
           {/* Competitive Intelligence */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Market Position</h2>
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+            <h2 className="text-xl font-bold text-white mb-4">Market Position</h2>
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">Your Price</span>
+                  <span className="text-gray-300">Your Price</span>
                   <span className="text-2xl font-bold text-purple-600">£{competitorInsights.yourPrice}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-600">Market Average</span>
+                  <span className="text-gray-300">Market Average</span>
                   <span className="font-semibold">£{competitorInsights.marketAverage}</span>
                 </div>
               </div>
 
               <div>
-                <div className="text-gray-600 text-sm mb-2">Market Range</div>
+                <div className="text-gray-300 text-sm mb-2">Market Range</div>
                 <div className="h-3 bg-gray-200 rounded-full relative">
                   <div className="absolute h-full bg-gradient-to-r from-green-400 to-purple-600 rounded-full" style={{ width: '100%' }} />
                   <div
@@ -216,11 +216,11 @@ const Analytics = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-purple-50 rounded-lg p-4">
-                  <div className="text-gray-600 text-sm mb-1">Your Ranking</div>
+                  <div className="text-gray-300 text-sm mb-1">Your Ranking</div>
                   <div className="text-2xl font-bold text-purple-600">{competitorInsights.yourRanking}</div>
                 </div>
                 <div className="bg-green-50 rounded-lg p-4">
-                  <div className="text-gray-600 text-sm mb-1">Demand Level</div>
+                  <div className="text-gray-300 text-sm mb-1">Demand Level</div>
                   <div className="text-2xl font-bold text-green-600">{competitorInsights.demandLevel}</div>
                 </div>
               </div>
@@ -229,14 +229,14 @@ const Analytics = () => {
         </div>
 
         {/* Client Demographics */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Client Demographics</h2>
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-8">
+          <h2 className="text-xl font-bold text-white mb-6">Client Demographics</h2>
           <div className="space-y-4">
             {clientDemographics.map((demo, index) => (
               <div key={index}>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-gray-900">{demo.type}</span>
-                  <span className="text-sm text-gray-600">{demo.bookings} bookings · £{demo.avgValue} avg</span>
+                  <span className="font-semibold text-white">{demo.type}</span>
+                  <span className="text-sm text-gray-300">{demo.bookings} bookings · £{demo.avgValue} avg</span>
                 </div>
                 <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                   <div
@@ -250,26 +250,26 @@ const Analytics = () => {
         </div>
 
         {/* Geographic Performance */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Geographic Performance</h2>
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
+          <h2 className="text-xl font-bold text-white mb-6">Geographic Performance</h2>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-3 px-4 text-gray-600 font-semibold">Location</th>
-                  <th className="text-right py-3 px-4 text-gray-600 font-semibold">Views</th>
-                  <th className="text-right py-3 px-4 text-gray-600 font-semibold">Enquiries</th>
-                  <th className="text-right py-3 px-4 text-gray-600 font-semibold">Bookings</th>
-                  <th className="text-right py-3 px-4 text-gray-600 font-semibold">Conversion</th>
+                  <th className="text-left py-3 px-4 text-gray-300 font-semibold">Location</th>
+                  <th className="text-right py-3 px-4 text-gray-300 font-semibold">Views</th>
+                  <th className="text-right py-3 px-4 text-gray-300 font-semibold">Enquiries</th>
+                  <th className="text-right py-3 px-4 text-gray-300 font-semibold">Bookings</th>
+                  <th className="text-right py-3 px-4 text-gray-300 font-semibold">Conversion</th>
                 </tr>
               </thead>
               <tbody>
                 {geographicData.map((geo, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-3 px-4 font-semibold text-gray-900">{geo.location}</td>
-                    <td className="text-right py-3 px-4 text-gray-700">{geo.views}</td>
-                    <td className="text-right py-3 px-4 text-gray-700">{geo.enquiries}</td>
-                    <td className="text-right py-3 px-4 text-gray-700">{geo.bookings}</td>
+                  <tr key={index} className="border-b border-gray-100 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+                    <td className="py-3 px-4 font-semibold text-white">{geo.location}</td>
+                    <td className="text-right py-3 px-4 text-gray-200">{geo.views}</td>
+                    <td className="text-right py-3 px-4 text-gray-200">{geo.enquiries}</td>
+                    <td className="text-right py-3 px-4 text-gray-200">{geo.bookings}</td>
                     <td className="text-right py-3 px-4">
                       <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-semibold">
                         {((geo.bookings / geo.views) * 100).toFixed(1)}%

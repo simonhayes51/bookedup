@@ -220,7 +220,7 @@ const LeadManagement = () => {
   const getScoreColor = (score) => {
     if (score >= 80) return 'text-green-600';
     if (score >= 60) return 'text-yellow-600';
-    return 'text-gray-600';
+    return 'text-gray-300';
   };
 
   const filteredLeads = leads.filter(lead => {
@@ -229,7 +229,7 @@ const LeadManagement = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
@@ -239,7 +239,7 @@ const LeadManagement = () => {
                 <Brain className="w-10 h-10 text-purple-400" />
                 <h1 className="text-4xl font-bold text-white">AI Lead Scoring & CRM</h1>
               </div>
-              <p className="text-gray-600">Focus on high-quality leads, close more deals</p>
+              <p className="text-gray-300">Focus on high-quality leads, close more deals</p>
             </div>
             <Button>
               <Download className="w-5 h-5 mr-2" />
@@ -250,12 +250,12 @@ const LeadManagement = () => {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-gray-600 text-sm">Total Leads</div>
-              <Users className="w-5 h-5 text-gray-600" />
+              <div className="text-gray-300 text-sm">Total Leads</div>
+              <Users className="w-5 h-5 text-gray-300" />
             </div>
-            <div className="text-3xl font-bold text-gray-900">{stats.totalLeads}</div>
+            <div className="text-3xl font-bold text-white">{stats.totalLeads}</div>
           </div>
 
           <div className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300 rounded-lg p-6">
@@ -267,26 +267,26 @@ const LeadManagement = () => {
             <div className="text-xs text-red-600 mt-1">80%+ score</div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-gray-600 text-sm">Conversion Rate</div>
+              <div className="text-gray-300 text-sm">Conversion Rate</div>
               <TrendingUp className="w-5 h-5 text-green-600" />
             </div>
             <div className="text-3xl font-bold text-green-600">{stats.conversionRate}%</div>
             <div className="text-xs text-gray-500 mt-1">Industry avg: 18%</div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-gray-600 text-sm">Avg Lead Score</div>
+              <div className="text-gray-300 text-sm">Avg Lead Score</div>
               <Target className="w-5 h-5 text-purple-600" />
             </div>
             <div className="text-3xl font-bold text-purple-600">{stats.avgLeadScore}</div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-gray-600 text-sm">Potential Value</div>
+              <div className="text-gray-300 text-sm">Potential Value</div>
               <DollarSign className="w-5 h-5 text-green-600" />
             </div>
             <div className="text-2xl font-bold text-green-600">£{stats.totalPotentialRevenue.toLocaleString()}</div>
@@ -308,7 +308,7 @@ const LeadManagement = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {scoringFactors.slice(0, 6).map((item, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+              <div key={index} className="bg-slate-800/10 backdrop-blur-sm rounded-lg p-3">
                 <div className="flex items-start justify-between mb-1">
                   <div className="text-sm">{item.factor}</div>
                   <div className={`text-xs font-bold px-2 py-0.5 rounded ${
@@ -324,7 +324,7 @@ const LeadManagement = () => {
         </div>
 
         {/* Temperature Filters */}
-        <div className="bg-white rounded-lg p-6 border-2 border-gray-200 mb-6">
+        <div className="bg-slate-800 rounded-lg p-6 border-2 border-gray-200 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <button
               onClick={() => setSelectedView('all')}
@@ -334,8 +334,8 @@ const LeadManagement = () => {
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
-              <div className="text-2xl font-bold text-gray-900">{stats.totalLeads}</div>
-              <div className="text-sm text-gray-600">All Leads</div>
+              <div className="text-2xl font-bold text-white">{stats.totalLeads}</div>
+              <div className="text-sm text-gray-300">All Leads</div>
             </button>
 
             <button
@@ -387,24 +387,24 @@ const LeadManagement = () => {
             return (
               <div
                 key={lead.id}
-                className={`bg-white rounded-lg p-6 border-2 ${tempColors.border} hover:shadow-xl transition-all`}
+                className={`bg-slate-800 rounded-lg p-6 border-2 ${tempColors.border} hover:shadow-xl transition-all`}
               >
                 {/* Lead Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-bold text-gray-900">{lead.clientName}</h3>
+                      <h3 className="text-xl font-bold text-white">{lead.clientName}</h3>
                       <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold border-2 ${tempColors.bg} ${tempColors.text} ${tempColors.border}`}>
                         {lead.temperature === 'hot' && <Zap className="w-3 h-3" />}
                         {lead.temperature.toUpperCase()}
                       </div>
                       {lead.tags.map((tag, index) => (
-                        <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-semibold">
+                        <span key={index} className="px-2 py-1 bg-gray-100 text-gray-300 rounded text-xs font-semibold">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-4 text-sm text-gray-300">
                       <div className="flex items-center gap-1">
                         <Mail className="w-4 h-4" />
                         {lead.clientEmail}
@@ -438,7 +438,7 @@ const LeadManagement = () => {
                     <Calendar className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs text-gray-500">Event Type</div>
-                      <div className="font-semibold text-gray-900">{lead.eventType}</div>
+                      <div className="font-semibold text-white">{lead.eventType}</div>
                     </div>
                   </div>
 
@@ -446,7 +446,7 @@ const LeadManagement = () => {
                     <Clock className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs text-gray-500">Event Date</div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold text-white">
                         {new Date(lead.eventDate).toLocaleDateString('en-GB')}
                       </div>
                     </div>
@@ -456,7 +456,7 @@ const LeadManagement = () => {
                     <MapPin className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs text-gray-500">Location</div>
-                      <div className="font-semibold text-gray-900">{lead.location} ({lead.distance}mi)</div>
+                      <div className="font-semibold text-white">{lead.location} ({lead.distance}mi)</div>
                     </div>
                   </div>
 
@@ -473,13 +473,13 @@ const LeadManagement = () => {
                     <Users className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="text-xs text-gray-500">Guests</div>
-                      <div className="font-semibold text-gray-900">{lead.guests} people</div>
+                      <div className="font-semibold text-white">{lead.guests} people</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Client Message */}
-                <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 mb-4">
+                <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-2 border-gray-200 rounded-lg p-4 mb-4">
                   <div className="text-xs text-gray-500 font-semibold mb-2">Client Message:</div>
                   <p className="text-gray-800">{lead.message}</p>
                 </div>
@@ -538,7 +538,7 @@ const LeadManagement = () => {
                     <Calendar className="w-4 h-4 mr-2" />
                     Check Availability
                   </Button>
-                  <button className="px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors font-semibold text-sm">
+                  <button className="px-4 py-2 text-gray-300 hover:bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-lg transition-colors font-semibold text-sm">
                     <X className="w-4 h-4 inline mr-2" />
                     Decline
                   </button>
