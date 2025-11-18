@@ -91,7 +91,7 @@ const Dashboard = () => {
       description: 'Track performance, views, and conversions',
       icon: BarChart3,
       link: '/analytics',
-      color: 'purple',
+      gradient: 'from-purple-500 to-purple-600',
       badge: 'Pro'
     },
     {
@@ -99,14 +99,14 @@ const Dashboard = () => {
       description: 'Manage availability and upcoming events',
       icon: Calendar,
       link: '/calendar',
-      color: 'blue'
+      gradient: 'from-blue-500 to-blue-600'
     },
     {
       title: 'Package Builder',
       description: 'Create pricing tiers that sell',
       icon: Package,
       link: '/packages',
-      color: 'green',
+      gradient: 'from-green-500 to-green-600',
       badge: 'Pro'
     },
     {
@@ -114,7 +114,7 @@ const Dashboard = () => {
       description: 'Generate responses with 92% conversion',
       icon: Zap,
       link: '/smart-replies',
-      color: 'purple',
+      gradient: 'from-yellow-500 to-orange-500',
       badge: 'Pro'
     },
     {
@@ -122,14 +122,14 @@ const Dashboard = () => {
       description: 'Build trust, get +30% more bookings',
       icon: Award,
       link: '/verification',
-      color: 'blue'
+      gradient: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Financial Dashboard',
       description: 'Track income, expenses, and taxes',
       icon: PiggyBank,
       link: '/financial',
-      color: 'green',
+      gradient: 'from-green-500 to-emerald-600',
       badge: 'Pro'
     },
     {
@@ -137,21 +137,21 @@ const Dashboard = () => {
       description: 'AI-powered profile optimization',
       icon: Edit2,
       link: '/profile-editor',
-      color: 'purple'
+      gradient: 'from-purple-500 to-pink-500'
     },
     {
       title: 'Review Management',
       description: 'Showcase 248 five-star reviews',
       icon: Star,
       link: '/reviews',
-      color: 'yellow'
+      gradient: 'from-yellow-400 to-yellow-600'
     },
     {
       title: 'Client Booking Portal',
       description: 'Manage bookings & payments',
       icon: FileText,
       link: '/client-portal',
-      color: 'blue',
+      gradient: 'from-blue-500 to-indigo-600',
       badge: 'Pro'
     },
     {
@@ -159,7 +159,7 @@ const Dashboard = () => {
       description: 'Prioritize high-quality leads',
       icon: Target,
       link: '/leads',
-      color: 'purple',
+      gradient: 'from-purple-600 to-purple-700',
       badge: 'Pro'
     },
     {
@@ -167,23 +167,23 @@ const Dashboard = () => {
       description: 'Respond to client enquiries',
       icon: MessageSquare,
       link: '/messages',
-      color: 'pink',
+      gradient: 'from-pink-500 to-pink-600',
       count: 3
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8">
+    <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Welcome back! 👋</h1>
-          <p className="text-gray-300">Here's what's happening with your bookings today</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome back! 👋</h1>
+          <p className="text-gray-600">Here's what's happening with your bookings today</p>
         </div>
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-purple-300 transition-colors">
+          <div className="card hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="text-gray-600 text-sm mb-1">Profile Views</div>
@@ -192,11 +192,13 @@ const Dashboard = () => {
                   ↑ {stats.viewsChange}% this month
                 </div>
               </div>
-              <Eye className="w-10 h-10 text-purple-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <Eye className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-blue-300 transition-colors">
+          <div className="card hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="text-gray-600 text-sm mb-1">Enquiries</div>
@@ -205,11 +207,13 @@ const Dashboard = () => {
                   ↑ {stats.enquiriesChange}% this month
                 </div>
               </div>
-              <MessageSquare className="w-10 h-10 text-blue-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                <MessageSquare className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-green-300 transition-colors">
+          <div className="card hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="text-gray-600 text-sm mb-1">Bookings</div>
@@ -218,11 +222,13 @@ const Dashboard = () => {
                   ↑ {stats.bookingsChange}% this month
                 </div>
               </div>
-              <Calendar className="w-10 h-10 text-green-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200 hover:border-yellow-300 transition-colors">
+          <div className="card hover-lift">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <div className="text-gray-600 text-sm mb-1">Revenue</div>
@@ -231,45 +237,45 @@ const Dashboard = () => {
                   ↑ {stats.revenueChange}% this month
                 </div>
               </div>
-              <DollarSign className="w-10 h-10 text-yellow-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+                <DollarSign className="w-6 h-6 text-white" />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-white mb-4">Quick Actions</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {quickActions.map((action, index) => {
               const Icon = action.icon;
-              const colors = {
-                purple: 'from-purple-500 to-purple-700',
-                blue: 'from-blue-500 to-blue-700',
-                green: 'from-green-500 to-green-700',
-                pink: 'from-pink-500 to-pink-700',
-                yellow: 'from-yellow-500 to-yellow-700'
-              };
 
               return (
                 <Link
                   key={index}
                   to={action.link}
-                  className={`bg-gradient-to-br ${colors[action.color]} rounded-lg p-6 text-white hover:scale-105 transition-transform relative overflow-hidden`}
+                  className="card hover-lift relative overflow-hidden group"
                 >
                   {action.badge && (
-                    <div className="absolute top-2 right-2 bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold">
+                    <div className="absolute top-4 right-4 bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-bold">
                       {action.badge}
                     </div>
                   )}
                   {action.count && (
-                    <div className="absolute top-2 right-2 bg-white text-gray-900 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
+                    <div className="absolute top-4 right-4 bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">
                       {action.count}
                     </div>
                   )}
-                  <Icon className="w-10 h-10 mb-4 opacity-90" />
-                  <h3 className="text-lg font-bold mb-2">{action.title}</h3>
-                  <p className="text-sm opacity-90">{action.description}</p>
-                  <ArrowRight className="w-5 h-5 mt-4 opacity-75" />
+                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${action.gradient} rounded-xl mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{action.title}</h3>
+                  <p className="text-sm text-gray-600 mb-4">{action.description}</p>
+                  <div className="flex items-center text-purple-600 font-semibold text-sm">
+                    Open
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </Link>
               );
             })}
@@ -278,7 +284,7 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Upcoming Bookings */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="card-elevated">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900">Upcoming Bookings</h2>
               <Link to="/calendar" className="text-purple-600 hover:text-purple-700 text-sm font-semibold">
@@ -290,7 +296,7 @@ const Dashboard = () => {
               {upcomingBookings.map((booking) => (
                 <div
                   key={booking.id}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-purple-50 transition-colors border border-gray-100"
                 >
                   <div className="flex-1">
                     <div className="font-semibold text-gray-900">{booking.title}</div>
@@ -299,7 +305,7 @@ const Dashboard = () => {
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-gray-900">£{booking.value}</div>
-                    <div className={`text-xs px-2 py-1 rounded-full mt-1 ${
+                    <div className={`text-xs px-2 py-1 rounded-full mt-1 font-medium ${
                       booking.status === 'confirmed'
                         ? 'bg-green-100 text-green-700'
                         : 'bg-yellow-100 text-yellow-700'
@@ -319,7 +325,7 @@ const Dashboard = () => {
           </div>
 
           {/* Recent Enquiries */}
-          <div className="bg-white rounded-lg p-6 border-2 border-gray-200">
+          <div className="card-elevated">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900">Recent Enquiries</h2>
               <Link to="/messages" className="text-purple-600 hover:text-purple-700 text-sm font-semibold">
@@ -331,8 +337,8 @@ const Dashboard = () => {
               {recentEnquiries.map((enquiry) => (
                 <div
                   key={enquiry.id}
-                  className={`flex items-center justify-between p-4 rounded-lg hover:bg-gray-100 transition-colors ${
-                    enquiry.unread ? 'bg-purple-50' : 'bg-gray-50'
+                  className={`flex items-center justify-between p-4 rounded-lg hover:bg-purple-50 transition-colors border ${
+                    enquiry.unread ? 'bg-purple-50 border-purple-200' : 'bg-gray-50 border-gray-100'
                   }`}
                 >
                   <div className="flex-1">
@@ -345,7 +351,7 @@ const Dashboard = () => {
                     <div className="text-sm text-gray-600">{enquiry.event}</div>
                     <div className="text-xs text-gray-500 mt-1">{enquiry.date}</div>
                   </div>
-                  <Button size="sm" variant={enquiry.unread ? 'primary' : 'outline'}>
+                  <Button size="sm" className={enquiry.unread ? 'btn-primary' : 'btn-secondary'}>
                     Reply
                   </Button>
                 </div>
@@ -361,26 +367,30 @@ const Dashboard = () => {
         </div>
 
         {/* Premium Features Banner */}
-        <div className="mt-8 bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 rounded-lg p-8 text-white">
+        <div className="mt-8 card-elevated bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Zap className="w-6 h-6" />
-                <h3 className="text-2xl font-bold">Unlock Premium Features</h3>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Unlock Premium Features</h3>
               </div>
-              <p className="text-purple-100 mb-4 max-w-2xl">
+              <p className="text-gray-700 mb-6 max-w-2xl leading-relaxed">
                 Get advanced analytics, smart pricing tools, unlimited packages, and priority support. Performers on Premium earn 3x more on average.
               </p>
               <div className="flex items-center gap-4">
-                <Button variant="secondary" size="lg">
-                  Upgrade to Premium - £29/mo
-                </Button>
-                <Link to="/pricing" className="text-white hover:text-purple-100 text-sm font-semibold">
+                <Link to="/pricing">
+                  <Button size="lg" className="btn-primary">
+                    Upgrade to Premium - £29/mo
+                  </Button>
+                </Link>
+                <Link to="/pricing" className="text-purple-600 hover:text-purple-700 text-sm font-semibold">
                   View all plans →
                 </Link>
               </div>
             </div>
-            <Award className="w-24 h-24 opacity-20 hidden lg:block" />
+            <Award className="w-32 h-32 text-purple-200 hidden lg:block" />
           </div>
         </div>
       </div>
