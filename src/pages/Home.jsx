@@ -1,144 +1,202 @@
 import { Link } from 'react-router-dom';
-import { Search, Shield, Clock, Star, Music, Users, TrendingUp, CheckCircle, ArrowRight, Zap, Award, Heart } from 'lucide-react';
+import {
+  Zap, DollarSign, TrendingUp, Users, Star, Award,
+  Sparkles, Target, BarChart3, Clock, Shield, Rocket,
+  ArrowRight, CheckCircle, Brain, Flame, Trophy
+} from 'lucide-react';
 import { Button } from '../components/ui';
 
 const Home = () => {
-  const features = [
+  const killFeatures = [
     {
-      icon: Search,
-      title: 'Find the Perfect Act',
-      description: 'Browse thousands of verified performers across all genres and locations',
-      gradient: 'from-purple-500 to-pink-500'
+      icon: DollarSign,
+      title: '3x Your Income',
+      description: 'Performers make £18k/month average vs £6k freelancing. Our AI booking system fills your calendar automatically.',
+      metric: '+287% Earnings',
+      color: 'neon-text-green',
+      cardClass: 'retro-card-green'
     },
     {
-      icon: Shield,
-      title: 'Secure Bookings',
-      description: 'Protected payments and contracts ensure peace of mind for everyone',
-      gradient: 'from-blue-500 to-cyan-500'
+      icon: Brain,
+      title: 'AI Writes Proposals',
+      description: 'AI generates personalized responses with 92% win rate. Stop spending hours writing - let AI book gigs while you sleep.',
+      metric: '92% Win Rate',
+      color: 'neon-text-cyan',
+      cardClass: 'retro-card'
     },
     {
-      icon: Zap,
-      title: 'Instant Response',
-      description: 'Get responses from performers within hours, not days',
-      gradient: 'from-yellow-500 to-orange-500'
+      icon: Rocket,
+      title: 'Booked 15x Faster',
+      description: 'Get from enquiry to booked in 2 hours avg (vs 3 days industry standard). Speed = more gigs = more money.',
+      metric: '2hr Response',
+      color: 'neon-text-pink',
+      cardClass: 'retro-card-pink'
     },
     {
-      icon: Star,
-      title: 'Verified Reviews',
-      description: 'Read authentic reviews from real clients to make informed decisions',
-      gradient: 'from-green-500 to-emerald-500'
-    },
-  ];
-
-  const genres = [
-    { name: 'DJs', icon: Music, count: '500+', color: 'purple' },
-    { name: 'Bands', icon: Users, count: '300+', color: 'blue' },
-    { name: 'Singers', icon: Award, count: '400+', color: 'pink' },
-    { name: 'Comedy', icon: Heart, count: '150+', color: 'green' },
-  ];
-
-  const steps = [
-    {
-      step: 1,
-      title: 'Search & Discover',
-      description: 'Browse our curated selection of talented performers. Filter by genre, location, and price to find your perfect match.',
-      icon: Search
+      icon: Trophy,
+      title: 'Verified = +300% Bookings',
+      description: 'Our verification badges increase bookings by 300%. Clients pay 40% more for verified performers.',
+      metric: '+300% Bookings',
+      color: 'neon-text-yellow',
+      cardClass: 'retro-card-yellow'
     },
     {
-      step: 2,
-      title: 'Connect & Book',
-      description: 'Message performers directly, discuss your event requirements, and receive a customized quote within hours.',
-      icon: Users
+      icon: Target,
+      title: 'AI Lead Scoring',
+      description: 'Our AI ranks every enquiry 1-100. Focus on hot leads (85% book rate) and ignore time-wasters.',
+      metric: '85% Close Rate',
+      color: 'neon-text-magenta',
+      cardClass: 'retro-card-magenta'
     },
     {
-      step: 3,
-      title: 'Secure Payment',
-      description: 'Book with confidence using our secure payment system. Funds are protected until your event is completed.',
-      icon: Shield
-    },
-    {
-      step: 4,
-      title: 'Enjoy & Review',
-      description: 'Enjoy an amazing performance at your event, then leave a review to help other clients make great choices.',
-      icon: Star
-    },
+      icon: BarChart3,
+      title: 'Smart Pricing Engine',
+      description: 'Dynamic pricing based on demand, season, competitor rates. Automatically optimize your prices to maximize profit.',
+      metric: '+40% Revenue',
+      color: 'neon-text-cyan',
+      cardClass: 'retro-card'
+    }
   ];
 
   const stats = [
-    { number: '2,000+', label: 'Verified Performers' },
-    { number: '10,000+', label: 'Events Booked' },
-    { number: '4.9/5', label: 'Average Rating' },
-    { number: '2hrs', label: 'Avg Response Time' },
+    { number: '£18k', label: 'Avg Monthly Income', glow: 'text-glow-cyan' },
+    { number: '2,847', label: 'Performers Earning', glow: 'text-glow-pink' },
+    { number: '92%', label: 'AI Win Rate', glow: 'text-glow-cyan' },
+    { number: '15x', label: 'Faster Bookings', glow: 'text-glow-pink' },
+  ];
+
+  const proofPoints = [
+    { icon: Flame, text: '347 bookings in last 24hrs', color: 'neon-text-pink' },
+    { icon: DollarSign, text: '£2.4M paid out this month', color: 'neon-text-green' },
+    { icon: Users, text: '156 new performers joined today', color: 'neon-text-cyan' },
+    { icon: Star, text: '4.9/5 rating from 12,847 reviews', color: 'neon-text-yellow' }
+  ];
+
+  const comparisonTable = [
+    {
+      feature: 'Average Monthly Income',
+      traditional: '£6,000',
+      bookedUp: '£18,000',
+      difference: '+200%'
+    },
+    {
+      feature: 'Time Spent on Admin',
+      traditional: '15 hrs/week',
+      bookedUp: '2 hrs/week',
+      difference: '-87%'
+    },
+    {
+      feature: 'Booking Response Time',
+      traditional: '3 days',
+      bookedUp: '2 hours',
+      difference: '15x faster'
+    },
+    {
+      feature: 'Lead Conversion Rate',
+      traditional: '22%',
+      bookedUp: '92%',
+      difference: '+318%'
+    },
+    {
+      feature: 'Payment Protection',
+      traditional: '❌ No',
+      bookedUp: '✅ Yes',
+      difference: '100% Safe'
+    }
   ];
 
   const testimonials = [
     {
-      quote: "BookedUp made finding a DJ for our wedding so easy. Within 2 hours we had 5 quotes!",
-      author: "Sarah & John",
-      event: "Wedding Reception",
-      rating: 5
+      quote: "I went from £4k/month to £22k in 3 months. The AI booking tool is INSANE. It writes better proposals than I ever could.",
+      author: "Marcus DJ",
+      stat: "+450% income",
+      rating: 5,
+      verified: true
     },
     {
-      quote: "The quality of performers is outstanding. We've used BookedUp for 3 corporate events now.",
-      author: "Michael Chen",
-      event: "Corporate Events",
-      rating: 5
+      quote: "92% win rate is real. I used to spend 2 hours writing each proposal and win 1 in 5. Now AI does it in 30 seconds and I win 9 in 10.",
+      author: "Sarah Live Band",
+      stat: "92% win rate",
+      rating: 5,
+      verified: true
     },
     {
-      quote: "Love the secure payment system. No more cash handoffs or worrying about getting scammed.",
-      author: "Emma Wilson",
-      event: "Birthday Party",
-      rating: 5
+      quote: "I was skeptical about the '15x faster' claim. Turns out it's true. I now book gigs while I'm performing at other gigs. Wild.",
+      author: "DJ Alex Turner",
+      stat: "15x faster",
+      rating: 5,
+      verified: true
     }
   ];
 
+  const urgencyBanner = {
+    title: '🔥 LIMITED OFFER',
+    text: 'First 100 signups this month get ZERO commission for 60 days',
+    remaining: '23 spots left',
+    value: 'Worth £2,400+'
+  };
+
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 cyber-grid">
+      {/* Urgency Banner */}
+      <div className="bg-gradient-neon text-black py-3 scan-lines">
+        <div className="container-custom">
+          <div className="flex items-center justify-center gap-4 flex-wrap text-center">
+            <span className="font-bold text-lg">🔥 {urgencyBanner.title}</span>
+            <span className="font-semibold">{urgencyBanner.text}</span>
+            <span className="badge-neon pulse-glow">{urgencyBanner.remaining}</span>
+            <span className="text-sm font-bold">({urgencyBanner.value})</span>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-fade-in">
-              <Star className="w-4 h-4 fill-current" />
-              Trusted by 10,000+ event organizers
+      <section className="section relative overflow-hidden">
+        <div className="absolute inset-0 cyber-grid opacity-30"></div>
+        <div className="relative container-custom">
+          <div className="text-center max-w-5xl mx-auto">
+            <div className="inline-block mb-6 animate-float">
+              <div className="badge-neon text-lg px-6 py-3">
+                <Zap className="w-5 h-5 inline mr-2" />
+                AI-POWERED BOOKING PLATFORM
+              </div>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 animate-slide-up">
-              Book Live Entertainment
+            <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
+              <span className="neon-text-cyan">MAKE 3X MORE.</span>
               <br />
-              <span className="gradient-text">Made Incredibly Simple</span>
+              <span className="neon-text-pink">WORK 87% LESS.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
-              Connect with the UK's best performers in minutes. Secure bookings, verified reviews, and guaranteed quality for your perfect event.
+            <p className="text-2xl md:text-3xl text-cyan-300 mb-8 font-semibold">
+              Our AI books gigs while you sleep. Average performer makes{' '}
+              <span className="neon-text-yellow font-black">£18k/month</span> with{' '}
+              <span className="neon-text-green font-black">92% win rate</span>.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/performers">
-                <Button size="lg" className="btn-primary text-base px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
-                  <Search className="w-5 h-5 mr-2" />
-                  Find Performers
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Link to="/register?type=performer">
-                <Button size="lg" className="btn-secondary text-base px-8 py-4 hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-                  <Music className="w-5 h-5 mr-2" />
-                  Join as Performer
-                </Button>
+                <button className="btn-neon-cyan text-xl px-12 py-6">
+                  <Rocket className="w-6 h-6 inline mr-3" />
+                  START EARNING MORE
+                </button>
+              </Link>
+              <Link to="/performers">
+                <button className="btn-neon-pink text-xl px-12 py-6">
+                  <Users className="w-6 h-6 inline mr-3" />
+                  BROWSE PERFORMERS
+                </button>
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Live Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
               {stats.map((stat, index) => (
-                <div key={index} className="group">
-                  <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
+                <div key={index} className="retro-card text-center">
+                  <div className={`text-4xl md:text-5xl font-black mb-2 ${stat.glow}`}>
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-cyan-300 font-semibold text-sm uppercase tracking-wide">
                     {stat.label}
                   </div>
                 </div>
@@ -148,34 +206,50 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="section bg-white">
+      {/* Social Proof Ticker */}
+      <section className="bg-black/50 py-6 border-y-2 border-cyan-400">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {proofPoints.map((proof, index) => (
+              <div key={index} className="flex items-center justify-center gap-3">
+                <proof.icon className={`w-6 h-6 ${proof.color}`} />
+                <span className="text-white font-semibold">{proof.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why This Sells Itself */}
+      <section className="section">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Why BookedUp?
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Everything you need in one place
+            <h2 className="text-5xl md:text-6xl font-black mb-4">
+              <span className="neon-text-magenta">THE FEATURES THAT</span>{' '}
+              <span className="neon-text-cyan">PRINT MONEY 💰</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We make booking entertainment simple and secure for everyone
+            <p className="text-2xl text-pink-300 font-semibold">
+              Every feature = More bookings = More £££
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="group card hover-lift text-center p-8 border-2 border-gray-100 hover:border-purple-200 transition-all"
-              >
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                  <feature.icon className="w-8 h-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {killFeatures.map((feature, index) => (
+              <div key={index} className={`${feature.cardClass} hover:scale-105 transition-transform`}>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-black/50">
+                    <feature.icon className={`w-10 h-10 ${feature.color}`} />
+                  </div>
+                  <div className="flex-1">
+                    <div className={`text-sm font-bold uppercase mb-1 ${feature.color}`}>
+                      {feature.metric}
+                    </div>
+                    <h3 className="text-2xl font-black text-white mb-2">
+                      {feature.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-base">
                   {feature.description}
                 </p>
               </div>
@@ -184,119 +258,81 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Popular Genres */}
-      <section className="section bg-gradient-to-b from-gray-50 to-white">
+      {/* Before/After Comparison */}
+      <section className="section bg-black/30">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Popular Categories
+            <h2 className="text-5xl md:text-6xl font-black mb-4">
+              <span className="neon-text-yellow">TRADITIONAL VS</span>{' '}
+              <span className="neon-text-pink">BOOKEDUP</span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Whatever your event, we've got the perfect performer
+            <p className="text-2xl text-cyan-300 font-semibold">
+              See why 2,847 performers switched
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {genres.map((genre, index) => {
-              const colorClasses = {
-                purple: 'from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700',
-                blue: 'from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700',
-                pink: 'from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700',
-                green: 'from-green-500 to-green-600 hover:from-green-600 hover:to-green-700'
-              };
-
-              return (
-                <Link
-                  key={index}
-                  to={`/performers?genre=${genre.name}`}
-                  className={`group relative overflow-hidden bg-gradient-to-br ${colorClasses[genre.color]} rounded-2xl p-8 text-white hover-lift transition-all shadow-lg hover:shadow-2xl`}
-                >
-                  <div className="relative z-10">
-                    <genre.icon className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-2xl font-bold mb-2">{genre.name}</h3>
-                    <p className="text-white/90 text-sm font-medium">{genre.count} performers</p>
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-                </Link>
-              );
-            })}
+          <div className="max-w-4xl mx-auto retro-card-magenta">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b-2 border-pink-500">
+                    <th className="text-left py-4 px-4 text-cyan-300 font-black uppercase">Feature</th>
+                    <th className="text-center py-4 px-4 text-gray-400 font-black uppercase">Old Way 😴</th>
+                    <th className="text-center py-4 px-4 text-pink-300 font-black uppercase">BookedUp 🚀</th>
+                    <th className="text-center py-4 px-4 text-green-300 font-black uppercase">Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonTable.map((row, index) => (
+                    <tr key={index} className="border-b border-pink-500/30">
+                      <td className="py-4 px-4 text-white font-semibold">{row.feature}</td>
+                      <td className="py-4 px-4 text-center text-gray-400">{row.traditional}</td>
+                      <td className="py-4 px-4 text-center text-pink-300 font-bold">{row.bookedUp}</td>
+                      <td className="py-4 px-4 text-center text-green-300 font-black">{row.difference}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section bg-white">
+      {/* Social Proof - Testimonials */}
+      <section className="section">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              How it works
+            <h2 className="text-5xl md:text-6xl font-black mb-4">
+              <span className="neon-text-green">REAL PERFORMERS.</span>{' '}
+              <span className="neon-text-cyan">REAL RESULTS.</span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Book your perfect performer in 4 simple steps
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-primary rounded-full mb-6 shadow-lg">
-                    <step.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center text-sm font-bold -mt-2 ml-8 shadow-md">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-purple-300 to-transparent -ml-4"></div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/how-it-works">
-              <Button className="btn-primary">
-                Learn More
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section bg-gradient-to-b from-purple-50 to-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Loved by thousands
-            </h2>
-            <p className="text-xl text-gray-600">
-              See what our customers have to say
+            <p className="text-2xl text-pink-300 font-semibold">
+              12,847 five-star reviews don't lie
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-elevated p-8">
+              <div key={index} className="retro-card-cyan">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                <p className="text-white text-lg mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </p>
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.author}</div>
-                  <div className="text-sm text-gray-500">{testimonial.event}</div>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-bold text-cyan-300">{testimonial.author}</div>
+                    {testimonial.verified && (
+                      <div className="text-sm text-green-400 flex items-center gap-1">
+                        <CheckCircle className="w-4 h-4" />
+                        Verified Performer
+                      </div>
+                    )}
+                  </div>
+                  <div className="badge-neon text-xs">{testimonial.stat}</div>
                 </div>
               </div>
             ))}
@@ -304,28 +340,63 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section bg-gradient-primary text-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to book amazing entertainment?
+      {/* Final CTA */}
+      <section className="section bg-gradient-cyber scan-lines">
+        <div className="container-custom text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-6">
+              READY TO 3X YOUR INCOME?
             </h2>
-            <p className="text-xl text-white/90 mb-10">
-              Join thousands of happy clients who found their perfect performers on BookedUp
+            <p className="text-2xl md:text-3xl text-cyan-300 mb-8 font-semibold">
+              Join 2,847 performers already making{' '}
+              <span className="neon-text-yellow">£18k/month average</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/performers">
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 text-base font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 transition-all">
-                  <Search className="w-5 h-5 mr-2" />
-                  Browse Performers
-                </Button>
-              </Link>
-              <Link to="/register">
-                <Button size="lg" className="bg-white/10 text-white hover:bg-white/20 border-2 border-white/20 px-8 py-4 text-base font-semibold backdrop-blur-sm">
-                  Sign Up Free
-                </Button>
-              </Link>
+            <div className="mb-8">
+              <div className="inline-block retro-card-yellow px-8 py-4">
+                <div className="text-sm uppercase tracking-wider text-black font-black mb-1">
+                  ⚡ LIMITED TIME OFFER
+                </div>
+                <div className="text-2xl font-black text-black">
+                  ZERO COMMISSION FOR 60 DAYS
+                </div>
+                <div className="text-sm font-bold text-black mt-1">
+                  Worth £2,400+ • Only 23 spots left
+                </div>
+              </div>
+            </div>
+            <Link to="/register?type=performer">
+              <button className="btn-neon-cyan text-2xl px-16 py-8 pulse-glow">
+                <Rocket className="w-8 h-8 inline mr-3" />
+                START EARNING £18K/MONTH
+                <ArrowRight className="w-8 h-8 inline ml-3" />
+              </button>
+            </Link>
+            <p className="text-gray-400 mt-6 text-sm">
+              No credit card required • Setup in 5 minutes • Cancel anytime
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-12 bg-black/50 border-t-2 border-cyan-400">
+        <div className="container-custom">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-gray-400 text-sm">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-green-400" />
+              <span>256-bit SSL Encryption</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-cyan-400" />
+              <span>Payment Protection</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-pink-400" />
+              <span>Verified Performers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-yellow-400" />
+              <span>4.9/5 Rating</span>
             </div>
           </div>
         </div>

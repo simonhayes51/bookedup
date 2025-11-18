@@ -26,29 +26,29 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+    <nav className="bg-black/90 border-b-2 border-cyan-400 sticky top-0 z-40 backdrop-blur-md neon-border-cyan">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3 group hover:opacity-80 transition-opacity">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <Music className="h-6 w-6 text-white" />
+            <Link to="/" className="flex items-center space-x-3 group hover:opacity-90 transition-opacity">
+              <div className="w-10 h-10 gradient-neon rounded-lg flex items-center justify-center pulse-glow">
+                <Music className="h-6 w-6 text-black" />
               </div>
-              <span className="text-xl font-bold gradient-text">BookedUp</span>
+              <span className="text-2xl font-black neon-text-cyan tracking-wider">BOOKEDUP</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
+          <div className="hidden md:flex md:items-center md:space-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-all px-4 py-2 rounded-lg ${
+                className={`text-sm font-bold uppercase tracking-wider transition-all px-5 py-2 rounded-lg ${
                   isActive(item.href)
-                    ? 'bg-purple-50 text-purple-700'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'text-cyan-300 bg-cyan-900/30 neon-border-cyan'
+                    : 'text-cyan-400 hover:text-cyan-300 hover:bg-cyan-900/20'
                 }`}
               >
                 {item.name}
@@ -62,14 +62,14 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 px-4 py-2 rounded-lg transition-all border border-gray-200"
+                  className="flex items-center space-x-3 focus:outline-none hover:bg-cyan-900/30 px-4 py-2 rounded-lg transition-all border-2 border-cyan-400 neon-border-cyan"
                 >
                   <Avatar
                     src={user?.avatar}
                     alt={`${user?.firstName} ${user?.lastName}`}
                     size="sm"
                   />
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-bold text-cyan-300">
                     {user?.firstName}
                   </span>
                 </button>
@@ -81,19 +81,19 @@ const Navbar = () => {
                       className="fixed inset-0 z-10"
                       onClick={() => setIsUserMenuOpen(false)}
                     />
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-1 z-20">
+                    <div className="absolute right-0 mt-2 w-56 retro-card py-1 z-20">
                       {userNavigation.map((item) => (
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="flex items-center px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                          className="flex items-center px-4 py-2.5 text-sm font-bold text-cyan-300 hover:bg-cyan-900/30 transition-colors"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
-                          <item.icon className="w-5 h-5 mr-3 text-gray-500" />
+                          <item.icon className="w-5 h-5 mr-3 text-cyan-400" />
                           {item.name}
                         </Link>
                       ))}
-                      <div className="border-t border-gray-100 my-1" />
+                      <div className="border-t border-cyan-500/30 my-1" />
                       <button
                         onClick={() => {
                           logout();
