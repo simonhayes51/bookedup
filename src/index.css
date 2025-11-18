@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 90s NEON AESTHETIC - BookedUp */
+/* Modern Vibrant Design - BookedUp */
 
 html, body, #root {
   height: 100%;
@@ -10,28 +10,14 @@ html, body, #root {
 
 @layer base {
   :root {
-    /* Neon Color Palette */
-    --neon-cyan: #00ffff;
-    --neon-magenta: #ff00ff;
-    --neon-yellow: #ffff00;
-    --neon-green: #00ff00;
-    --neon-pink: #ff1493;
-    --neon-blue: #0080ff;
-    --neon-purple: #bf00ff;
-    --neon-orange: #ff6600;
-
-    /* Dark Backgrounds */
-    --bg-dark: #0a0a0f;
-    --bg-darker: #050508;
-    --bg-grid: #1a1a2e;
-  }
-
-  * {
-    @apply border-cyan-400/30;
+    /* Vibrant Brand Colors */
+    --color-primary: 139 92 246; /* purple-500 */
+    --color-secondary: 236 72 153; /* pink-500 */
+    --color-accent: 59 130 246; /* blue-500 */
   }
 
   body {
-    @apply bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white font-sans antialiased;
+    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white font-sans antialiased;
     background-attachment: fixed;
   }
 
@@ -45,243 +31,55 @@ html, body, #root {
 }
 
 @layer components {
-  /* Neon Gradients */
-  .gradient-neon {
-    background: linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #ffff00 100%);
+  /* Gradients */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
   }
 
-  .gradient-neon-pink {
-    background: linear-gradient(135deg, #ff1493 0%, #ff00ff 100%);
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600;
   }
 
-  .gradient-neon-cyan {
-    background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+  .gradient-accent {
+    @apply bg-gradient-to-r from-pink-600 to-orange-500;
   }
 
-  .gradient-neon-green {
-    background: linear-gradient(135deg, #00ff00 0%, #00ffff 100%);
+  .gradient-hero {
+    @apply bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500;
   }
 
-  .gradient-cyber {
-    background: linear-gradient(135deg, #bf00ff 0%, #ff00ff 50%, #00ffff 100%);
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
   }
 
-  .gradient-sunset {
-    background: linear-gradient(135deg, #ff6600 0%, #ff1493 50%, #bf00ff 100%);
+  /* Cards */
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 transition-all hover:bg-white/10 hover:border-white/20;
   }
 
-  /* Neon Text */
-  .neon-text-cyan {
-    color: var(--neon-cyan);
-    text-shadow:
-      0 0 10px var(--neon-cyan),
-      0 0 20px var(--neon-cyan),
-      0 0 30px var(--neon-cyan),
-      0 0 40px var(--neon-cyan);
+  .card-elevated {
+    @apply bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl;
   }
 
-  .neon-text-pink {
-    color: var(--neon-pink);
-    text-shadow:
-      0 0 10px var(--neon-pink),
-      0 0 20px var(--neon-pink),
-      0 0 30px var(--neon-pink),
-      0 0 40px var(--neon-pink);
+  .card-solid {
+    @apply bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-purple-500/50 transition-all;
   }
 
-  .neon-text-magenta {
-    color: var(--neon-magenta);
-    text-shadow:
-      0 0 10px var(--neon-magenta),
-      0 0 20px var(--neon-magenta),
-      0 0 30px var(--neon-magenta),
-      0 0 40px var(--neon-magenta);
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-xl transition-all duration-200;
   }
 
-  .neon-text-yellow {
-    color: var(--neon-yellow);
-    text-shadow:
-      0 0 10px var(--neon-yellow),
-      0 0 20px var(--neon-yellow),
-      0 0 30px var(--neon-yellow);
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-500 hover:to-pink-500 shadow-lg hover:shadow-xl;
   }
 
-  .neon-text-green {
-    color: var(--neon-green);
-    text-shadow:
-      0 0 10px var(--neon-green),
-      0 0 20px var(--neon-green),
-      0 0 30px var(--neon-green);
+  .btn-secondary {
+    @apply btn bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 backdrop-blur-sm;
   }
 
-  /* Retro Cards */
-  .retro-card {
-    @apply bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border-2 transition-all;
-    border-color: var(--neon-cyan);
-    box-shadow:
-      0 0 20px rgba(0, 255, 255, 0.3),
-      inset 0 0 20px rgba(0, 255, 255, 0.1);
-  }
-
-  .retro-card:hover {
-    box-shadow:
-      0 0 30px rgba(0, 255, 255, 0.5),
-      inset 0 0 30px rgba(0, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-
-  .retro-card-pink {
-    @apply bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border-2 transition-all;
-    border-color: var(--neon-pink);
-    box-shadow:
-      0 0 20px rgba(255, 20, 147, 0.3),
-      inset 0 0 20px rgba(255, 20, 147, 0.1);
-  }
-
-  .retro-card-pink:hover {
-    box-shadow:
-      0 0 30px rgba(255, 20, 147, 0.5),
-      inset 0 0 30px rgba(255, 20, 147, 0.2);
-    transform: translateY(-2px);
-  }
-
-  .retro-card-yellow {
-    @apply bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border-2 transition-all;
-    border-color: var(--neon-yellow);
-    box-shadow:
-      0 0 20px rgba(255, 255, 0, 0.3),
-      inset 0 0 20px rgba(255, 255, 0, 0.1);
-  }
-
-  .retro-card-green {
-    @apply bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border-2 transition-all;
-    border-color: var(--neon-green);
-    box-shadow:
-      0 0 20px rgba(0, 255, 0, 0.3),
-      inset 0 0 20px rgba(0, 255, 0, 0.1);
-  }
-
-  .retro-card-magenta {
-    @apply bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 border-2 transition-all;
-    border-color: var(--neon-magenta);
-    box-shadow:
-      0 0 20px rgba(255, 0, 255, 0.3),
-      inset 0 0 20px rgba(255, 0, 255, 0.1);
-  }
-
-  /* Neon Buttons */
-  .btn-neon-cyan {
-    @apply px-8 py-4 font-bold rounded-lg uppercase tracking-wider transition-all;
-    background: transparent;
-    color: var(--neon-cyan);
-    border: 3px solid var(--neon-cyan);
-    box-shadow:
-      0 0 20px rgba(0, 255, 255, 0.5),
-      inset 0 0 20px rgba(0, 255, 255, 0.1);
-  }
-
-  .btn-neon-cyan:hover {
-    background: var(--neon-cyan);
-    color: #000;
-    box-shadow:
-      0 0 40px rgba(0, 255, 255, 0.8),
-      inset 0 0 40px rgba(0, 255, 255, 0.3);
-  }
-
-  .btn-neon-pink {
-    @apply px-8 py-4 font-bold rounded-lg uppercase tracking-wider transition-all;
-    background: transparent;
-    color: var(--neon-pink);
-    border: 3px solid var(--neon-pink);
-    box-shadow:
-      0 0 20px rgba(255, 20, 147, 0.5),
-      inset 0 0 20px rgba(255, 20, 147, 0.1);
-  }
-
-  .btn-neon-pink:hover {
-    background: var(--neon-pink);
-    color: #000;
-    box-shadow:
-      0 0 40px rgba(255, 20, 147, 0.8),
-      inset 0 0 40px rgba(255, 20, 147, 0.3);
-  }
-
-  .btn-neon-yellow {
-    @apply px-8 py-4 font-bold rounded-lg uppercase tracking-wider transition-all;
-    background: transparent;
-    color: var(--neon-yellow);
-    border: 3px solid var(--neon-yellow);
-    box-shadow:
-      0 0 20px rgba(255, 255, 0, 0.5),
-      inset 0 0 20px rgba(255, 255, 0, 0.1);
-  }
-
-  .btn-neon-yellow:hover {
-    background: var(--neon-yellow);
-    color: #000;
-    box-shadow:
-      0 0 40px rgba(255, 255, 0, 0.8),
-      inset 0 0 40px rgba(255, 255, 0, 0.3);
-  }
-
-  /* Grid Background */
-  .cyber-grid {
-    background-image:
-      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
-
-  /* Scan Line Effect */
-  .scan-lines {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .scan-lines::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.1) 0px,
-      rgba(0, 0, 0, 0.1) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  /* Rotating Border Animation */
-  @keyframes rotate-border {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    100% {
-      filter: hue-rotate(360deg);
-    }
-  }
-
-  .rotating-border {
-    animation: rotate-border 3s linear infinite;
-  }
-
-  /* Pulse Glow */
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(0, 255, 255, 1);
-    }
-  }
-
-  .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  .btn-accent {
+    @apply btn bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500;
   }
 
   /* Section Spacing */
@@ -294,129 +92,70 @@ html, body, #root {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Neon Badges */
-  .badge-neon {
-    @apply px-4 py-2 rounded-full font-bold uppercase text-sm tracking-wider;
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-    color: #000;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold;
   }
 
-  /* Glitch Effect */
-  @keyframes glitch {
-    0% {
-      transform: translate(0);
-    }
-    20% {
-      transform: translate(-2px, 2px);
-    }
-    40% {
-      transform: translate(-2px, -2px);
-    }
-    60% {
-      transform: translate(2px, 2px);
-    }
-    80% {
-      transform: translate(2px, -2px);
-    }
-    100% {
-      transform: translate(0);
-    }
+  .badge-primary {
+    @apply badge bg-purple-500/20 text-purple-300 border border-purple-500/30;
   }
 
-  .glitch {
-    animation: glitch 0.3s infinite;
+  .badge-success {
+    @apply badge bg-green-500/20 text-green-300 border border-green-500/30;
   }
 
-  /* VHS Effect */
-  .vhs-effect {
-    position: relative;
+  .badge-gradient {
+    @apply badge bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-white border border-purple-500/30;
   }
 
-  .vhs-effect::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-    pointer-events: none;
-  }
-
-  /* Compatibility Classes */
-  .gradient-primary {
-    @apply gradient-neon;
-  }
-
-  .card {
-    @apply retro-card;
-  }
-
-  .card-elevated {
-    @apply retro-card;
-  }
-
-  .btn-primary {
-    @apply btn-neon-cyan;
-  }
-
-  .btn-secondary {
-    @apply btn-neon-pink;
-  }
-
+  /* Hover Effects */
   .hover-lift {
-    @apply transition-transform duration-200 hover:-translate-y-2;
+    @apply transition-transform duration-200 hover:-translate-y-1;
   }
 
   .hover-scale {
-    @apply transition-transform duration-200 hover:scale-110;
+    @apply transition-transform duration-200 hover:scale-105;
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta), var(--neon-yellow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Retro Cards - Legacy Support */
+  .retro-card {
+    @apply card;
+  }
+
+  .retro-card-pink {
+    @apply card border-pink-500/30;
+  }
+
+  .retro-card-cyan {
+    @apply card border-blue-500/30;
+  }
+
+  .retro-card-yellow {
+    @apply card border-yellow-500/30;
+  }
+
+  .retro-card-green {
+    @apply card border-green-500/30;
+  }
+
+  .retro-card-magenta {
+    @apply card border-purple-500/30;
   }
 }
 
 @layer utilities {
-  /* Neon Borders */
-  .neon-border-cyan {
-    border: 2px solid var(--neon-cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  }
-
-  .neon-border-pink {
-    border: 2px solid var(--neon-pink);
-    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
-  }
-
-  .neon-border-yellow {
-    border: 2px solid var(--neon-yellow);
-    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
-  }
-
   /* Text Effects */
-  .text-glow-cyan {
-    text-shadow:
-      0 0 10px rgba(0, 255, 255, 0.8),
-      0 0 20px rgba(0, 255, 255, 0.6),
-      0 0 30px rgba(0, 255, 255, 0.4);
+  .text-glow {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
   }
 
   .text-glow-pink {
-    text-shadow:
-      0 0 10px rgba(255, 20, 147, 0.8),
-      0 0 20px rgba(255, 20, 147, 0.6),
-      0 0 30px rgba(255, 20, 147, 0.4);
+    text-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   }
 
   /* Animations */
@@ -441,7 +180,7 @@ html, body, #root {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
   }
 
@@ -456,34 +195,42 @@ html, body, #root {
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
   }
+
+  /* Grid Background */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
 }
 
-/* Scrollbar Styling - Neon */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+  background: linear-gradient(135deg, rgb(139 92 246), rgb(236 72 153));
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: 0 0 10px var(--neon-cyan);
+  background: linear-gradient(135deg, rgb(124 58 237), rgb(219 39 119));
 }
 
 /* Selection */
 ::selection {
-  background: var(--neon-cyan);
-  color: #000;
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
 }
 
 ::-moz-selection {
-  background: var(--neon-cyan);
-  color: #000;
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
 }
