@@ -180,15 +180,15 @@ Best,
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8">
+    <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Sparkles className="w-10 h-10 text-purple-400" />
-            <h1 className="text-4xl font-bold text-white">AI Smart Replies</h1>
+            <h1 className="text-4xl font-bold text-gray-900">AI Smart Replies</h1>
           </div>
-          <p className="text-gray-300">Respond faster, book more - powered by AI</p>
+          <p className="text-gray-600">Respond faster, book more - powered by AI</p>
         </div>
 
         {/* Stats */}
@@ -276,7 +276,7 @@ Best,
 
             {!selectedEnquiry ? (
               <div className="text-center py-12 text-gray-500">
-                <Sparkles className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+                <Sparkles className="w-16 h-16 mx-auto mb-4 text-gray-600" />
                 <p className="text-lg font-semibold mb-2">Select an enquiry to generate replies</p>
                 <p className="text-sm">Our AI will create 3 personalized response options</p>
               </div>

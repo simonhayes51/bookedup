@@ -146,15 +146,15 @@ const Verification = () => {
   const completionRate = Math.round((verificationCount / totalVerifications) * 100);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-8">
+    <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Shield className="w-10 h-10 text-purple-400" />
-            <h1 className="text-4xl font-bold text-white">Verification & Badges</h1>
+            <h1 className="text-4xl font-bold text-gray-900">Verification & Badges</h1>
           </div>
-          <p className="text-gray-300">Build trust and get more bookings with verified badges</p>
+          <p className="text-gray-600">Build trust and get more bookings with verified badges</p>
         </div>
 
         {/* Progress Overview */}
